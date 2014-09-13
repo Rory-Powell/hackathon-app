@@ -14,5 +14,7 @@
     <string name="title_checkinDialog">Check in Patient</string>
     <string name="select_PatientDialog">Patient</string>
     <string name="select_DoctorDialog">Doctor</string>
+    <string name="cancel_Dialog">Cancel</string>
+    <string name="save_Dialog">Save</string>
 
 </resources>
