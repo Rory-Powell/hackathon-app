@@ -6,22 +6,21 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import com.medmanagerui.fragments.BedViewFragment;
 
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+    private Context ctx;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -36,7 +35,7 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ctx=this;
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -51,9 +50,19 @@ public class MainActivity extends Activity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
+        switch (position){
+        case 1:
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, BedViewFragment.newInstance(ctx))
                 .commit();
+        break;
+        case 2:
+        fragmentManager.beginTransaction()
+        .replace(R.id.container, BedViewFragment.newInstance(ctx))
+        .commit();
+        break;
+    }
+
     }
 
     public void onSectionAttached(int number) {
@@ -65,6 +74,9 @@ public class MainActivity extends Activity
                 mTitle = getString(R.string.title_section2);
                 break;
             case 3:
+                mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
                 mTitle = getString(R.string.title_section3);
                 break;
         }
