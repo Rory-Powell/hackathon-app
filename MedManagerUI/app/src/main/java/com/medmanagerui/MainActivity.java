@@ -58,7 +58,7 @@ public class MainActivity extends Activity
 
             @Override
             public void failure(RetrofitError error) {
-                System.out.print("");
+                dialog.hide();
             }
         });
 
@@ -71,7 +71,7 @@ public class MainActivity extends Activity
 
             @Override
             public void failure(RetrofitError error) {
-                System.out.print("");
+                dialog.hide();
             }
         });
         super.onCreate(savedInstanceState);
