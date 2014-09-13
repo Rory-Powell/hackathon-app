@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 
 import com.medmanagerui.fragments.BedViewFragment;
+import com.medmanagerui.fragments.DoctorMainViewFragment;
 
 
 public class MainActivity extends Activity
@@ -59,7 +60,7 @@ public class MainActivity extends Activity
 
         case 1:
         fragmentManager.beginTransaction()
-        .replace(R.id.container, BedViewFragment.newInstance(ctx))
+        .replace(R.id.container, DoctorMainViewFragment.newInstance(ctx))
         .commit();
         break;
 

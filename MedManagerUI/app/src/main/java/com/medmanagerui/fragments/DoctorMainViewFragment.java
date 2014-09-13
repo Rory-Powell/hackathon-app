@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.medmanagerui.adapters.GridViewAdapter;
 import com.medmanagerui.MainActivity;
 import com.medmanagerui.R;
+import com.medmanagerui.adapters.ListViewAdapter;
 
 
 public class DoctorMainViewFragment extends Fragment {
@@ -45,8 +46,8 @@ public class DoctorMainViewFragment extends Fragment {
 
         //   setContentView(R.layout.fragment_doctor_main_view);
 
-        ListView listview = (ListView) getView().findViewById(R.id.listView);
-        listview.setAdapter(new GridViewAdapter(ctx));
+        ListView listview = (ListView) rootView.findViewById(R.id.listView);
+        listview.setAdapter(new ListViewAdapter(ctx));
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Toast.makeText(ctx, "" + position, Toast.LENGTH_SHORT).show();
