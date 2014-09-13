@@ -1,6 +1,3 @@
-package com.example.dmurray.medmanagerui;
-
-
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
@@ -21,6 +18,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.dmurray.medmanagerui.R;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
