@@ -56,12 +56,11 @@
                                     <div class="main-view">
                                         <div class="heading"><h4>  Details</h4> </div>
                                         <div class="body">@for(ward <- wards) {
-                                            @ward.name
                                             <ul class="beds">
                                                 <script></script>
                                             @for(bed <- beds) {
                                                 @if(bed.id == ward.id){
-                                                    <li class="bed"> <img src="@routes.Assets.at("images/bed1.png")" style="width:112;height:=112">
+                                                    <li class="bed"> @bed.id <img src="@routes.Assets.at("images/bed1.png")" style="width:112;height:=112">
                                                     </li>
                                                 }
                                             }
