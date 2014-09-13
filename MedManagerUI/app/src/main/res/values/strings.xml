@@ -2,14 +2,30 @@
 <resources>
 
     <string name="app_name">MedManagerUI</string>
-    <string name="title_section1">Doctor</string>
-    <string name="title_section2">Nurse</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_Doctor">Doctor</string>
+    <string name="title_Nurse">Nurse</string>
+    <string name="title_TestInfo">testInfo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
     <string name="sample_2">Example</string>
     <string name="sample_4">Example</string>
+    <string name="title_checkinDialog">Check in Patient</string>
+    <string name="select_PatientDialog">Patient</string>
+    <string name="select_DoctorDialog">Doctor</string>
+    <string name="cancel_Dialog">Cancel</string>
+    <string name="save_Dialog">Save</string>
+
+    <!--Ryan's Strings-->
+    <string name="patientBedData">1</string>
+    <string name="patientWardData">Dalra</string>
+    <string name="patientAllergiesData">None</string>
+    <string name="patientMedicationData">None</string>
+    <string name="patientVaccinationsData">None</string>
+    <string name="patientAlimentData">Sore Knee</string>
+    <string name="patientDOBData">30/10/1995</string>
+    <string name="patientAddressData">74 Example, Banbridge</string>
+    <string name="patientDoctorData">Dr. Example</string>
 
 </resources>
