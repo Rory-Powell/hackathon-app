@@ -1,7 +1,25 @@
-@(message: String)
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
+    <div class="container">
+        <form class="form-signin" role="form">
+            <h1 class="form-signin-heading" styles="color:#FFF;text">
+                Welcome to MedManger
+            </h1>
+            <h2 class="form-signin-heading">
+                Please Log in
+            </h2>
+            <input class="form-control" type="id" autofocus="" required="" placeholder="Unique ID"></input>
+            <input class="form-control" type="password" autofocus="" required="" placeholder="password"></input>
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"></input>
+                Remember me
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                Sign in
+            </button>
+
+        </form>
+    </div>
 
 }

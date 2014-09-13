@@ -14,9 +14,13 @@ import javax.persistence.OneToOne;
 public class Bed extends Model {
 
     @Id
-    public String bedId;
+    public String id;
 
     @OneToOne(cascade= CascadeType.ALL)
-    public int ward;
+    public Ward ward;
+
+    public static Finder<String, Bed> find = new Finder<>(
+            String.class, Bed.class
+    );
 
 }
