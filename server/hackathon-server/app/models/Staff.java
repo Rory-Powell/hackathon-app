@@ -17,4 +17,8 @@ public class Staff extends Model {
     public String password;
 
     public boolean isDoctor;
+
+    public static Finder<String, Staff> find = new Finder<>(
+            String.class, Staff.class
+    );
 }

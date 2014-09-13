@@ -37,8 +37,8 @@ public class Patient extends Model {
     @OneToOne(cascade= CascadeType.ALL)
     public Bed bed;
 
-
-
-
+    public static Finder<String, Patient> find = new Finder<>(
+            String.class, Patient.class
+    );
 
 }
