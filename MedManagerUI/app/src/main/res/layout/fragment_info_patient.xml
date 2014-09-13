@@ -91,18 +91,33 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp" />
 
+
+             <LinearLayout
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date"
+                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/patientAllergies"
                 android:text="@string/patientAllergiesData"
                 android:enabled="false"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:editable="true" />
 
-            <TextView
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:id="@+id/buttonAllergies"
+            android:layout_marginLeft="15dp" />
+
+        <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
