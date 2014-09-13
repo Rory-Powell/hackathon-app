@@ -3,7 +3,7 @@
     margin-top:50px;
 }
 .ward-details {
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 5px;
 }
 
@@ -59,6 +59,11 @@
     padding:5px;
     margin-top: 5px;
     list-style: none;
+
+}
+
+.bed {
+    border-radius: 5px;
 
 }
 

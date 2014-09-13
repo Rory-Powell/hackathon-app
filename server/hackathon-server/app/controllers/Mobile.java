@@ -3,6 +3,7 @@ package controllers;
 import jdk.nashorn.internal.ir.ObjectNode;
 import models.Bed;
 import models.Patient;
+import models.Ward;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -19,6 +20,10 @@ public class Mobile extends Controller {
 
     public static Result fetchAllBeds() {
         return ok(Json.toJson(Bed.find.all()));
+    }
+
+    public static Result fetchAllWards() {
+        return ok(Json.toJson(Ward.find.all()));
     }
 
 }
