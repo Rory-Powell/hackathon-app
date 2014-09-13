@@ -17,4 +17,15 @@
     <string name="cancel_Dialog">Cancel</string>
     <string name="save_Dialog">Save</string>
 
+    <!--Ryan's Strings-->
+    <string name="patientBedData">1</string>
+    <string name="patientWardData">Dalra</string>
+    <string name="patientAllergiesData">None</string>
+    <string name="patientMedicationData">None</string>
+    <string name="patientVaccinationsData">None</string>
+    <string name="patientAlimentData">Sore Knee</string>
+    <string name="patientDOBData">30/10/1995</string>
+    <string name="patientAddressData">74 Example, Banbridge</string>
+    <string name="patientDoctorData">Dr. Example</string>
+
 </resources>
