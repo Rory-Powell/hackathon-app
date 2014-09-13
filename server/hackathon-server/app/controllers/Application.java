@@ -11,6 +11,8 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
 
+import java.util.Map;
+
 public class Application extends Controller {
 
     public static Result index() {
@@ -25,29 +27,19 @@ public class Application extends Controller {
     public static Result login() {
 
         /** Bind the request data to a form. **/
-        DynamicForm requestData = Form.form().bindFromRequest();
+        Map<String, String[]> data = Controller.request().body().asFormUrlEncoded();
 
-        ObjectNode result = Json.newObject();
-
-        if (null == requestData) {
-            result.put("success", false);
-            result.put(
-                    "message",
-                    "User credentials must be provided"
-            );
-            return ok(result);
+        if (null == data) {
+            flash("error", "Please provide login details");
+            return ok(index.render());
         }
 
-        final String userID = requestData.get("id");
-        final String password = requestData.get("password");
+        final String userID = data.get("id")[0];
+        final String password = data.get("password")[0];
 
         if (null == userID || null == password) {
-            result.put("success", false);
-            result.put(
-                    "message",
-                    "User credentials must be provided"
-            );
-            return ok(result);
+            flash("error", "Please provide login details");
+            return ok(index.render());
         }
 
         Staff staff = Staff.find.where().eq("id", userID).eq("password", password).findUnique();
@@ -60,12 +52,8 @@ public class Application extends Controller {
                     controllers.routes.Application.nurse()
             );
         } else {
-            result.put("success", false);
-            result.put(
-                    "message",
-                    "User credentials are not correct"
-            );
-            return ok(result);
+            flash("error", "Login details are not correct.");
+            return ok(index.render());
         }
     }
     public static Result nursepatientdetails() {
