@@ -56,9 +56,16 @@ public class MainActivity extends Activity
                 .replace(R.id.container, BedViewFragment.newInstance(ctx))
                 .commit();
         break;
+
         case 2:
         fragmentManager.beginTransaction()
         .replace(R.id.container, BedViewFragment.newInstance(ctx))
+        .commit();
+        break;
+
+        case 3:
+        fragmentManager.beginTransaction()
+        .replace(R.id.container, InfoPatientFragment.newInstance(ctx))
         .commit();
         break;
     }
@@ -78,6 +85,10 @@ public class MainActivity extends Activity
                 break;
             case 4:
                 mTitle = getString(R.string.title_section3);
+                break;
+
+            case 5:
+                mTitle = getString(R.string.title_section5);
                 break;
         }
     }
