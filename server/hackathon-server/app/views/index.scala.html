@@ -2,15 +2,23 @@
 @main("Welcome to Play") {
 
     <div class="container">
-        <form class="form-signin" role="form" action="/login">
+
+        <form class="form-signin" role="form" action="/login" method="post">
             <h1 class="form-signin-heading" style="color:#5EC253;text">
+
                 Welcome to MedManger
             </h1>
             <h2 class="form-signin-heading">
                 Please log in
             </h2>
-            <input class="form-control" type="id" autofocus="" required="" placeholder="Unique ID" style="width:200px"></input>
-            <input class="form-control" type="password" autofocus="" required="" placeholder="password" style="width:200px"></input>
+
+            <input class="form-control" name="id" type="id" autofocus="" required="" placeholder="Unique ID" style="width:200px"></input>
+            <input class="form-control" name="password" type="password" autofocus="" required="" placeholder="password" style="width:200px"></input>
+
+            @if(flash.contains("error")) {
+                <div class="alert alert-danger" style="width:250px;margin-top:5px;" role="alert">@flash.get("error") </div>
+            }
+
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" ></input>
                 Remember me
