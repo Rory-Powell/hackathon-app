@@ -10,4 +10,8 @@ public class Application extends Controller {
         return ok(index.render("Your new application is ready."));
     }
 
+    public static Result nurse() {
+        return ok(nurse.render("This is the nurse page"));
+    }
+
 }
