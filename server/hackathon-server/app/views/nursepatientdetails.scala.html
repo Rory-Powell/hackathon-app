@@ -1,6 +1,6 @@
-
+@(wards:java.util.List[models.Ward])(beds:java.util.List[models.Bed])
 @main("MedManager Nurse Patient Details Interface") {
-    <header class="navbar-default">
+    <header class="navbar-default" style="display:none;">
         <nav role="navigation">
             <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,14 +28,31 @@
 
 
 
-                        <div class="row">
-                            <div class="col-sm-4 ">
+                        <div class="row" id="details-row" style="display:none;">
+                            <div class="col-sm-3 ">
                                 <div class="ward-details">
                                     <div class="heading"> Wards/Beds</div>
-                                    <div class="body">Hello</div>
+                                    <div class="body">
+                                        <ul class="wards"><span class="glyphicon glyphicon-plus"></span> <strong><u>Wards</u></strong>
+                                            @for(ward <- wards) {
+                                                <li class="ward"> @ward.name
+                                                <ul class="beds">
+                                                @for(bed <- beds) {
+                                                    @if(bed.id == ward.id){
+                                                        <li class="bed">Bed @bed.id
+                                                        </li>
+                                                    }
+                                                }
+
+                                                </ul>
+                                                </li>
+                                            }
+
+                                        </ul>
+                                        </div>
                                 </div>
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-sm-9">
                                     <div class="main-view">
                                         <div class="heading"> Details</div>
                                         <div class="body">Hello</div>

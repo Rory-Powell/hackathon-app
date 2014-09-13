@@ -2,10 +2,7 @@ package models;
 
 import play.db.ebean.Model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /**
  * Created by martinmckeaveney on 13/09/2014.
@@ -16,7 +13,7 @@ public class Bed extends Model {
     @Id
     public String id;
 
-    @OneToOne(cascade= CascadeType.ALL)
+    @ManyToOne(cascade= CascadeType.ALL)
     public Ward ward;
 
     public static Finder<String, Bed> find = new Finder<>(
