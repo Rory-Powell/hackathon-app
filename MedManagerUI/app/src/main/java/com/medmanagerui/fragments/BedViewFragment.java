@@ -1,5 +1,8 @@
 package com.medmanagerui.fragments;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -18,6 +21,7 @@ public class BedViewFragment extends Fragment {
 
 
     private static final String ARG_SECTION_NUMBER = "section_number";
+    private static final int DIALOG_ALERT = 10;
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -37,7 +41,9 @@ public class BedViewFragment extends Fragment {
  //   public View onCreateView(LayoutInflater inflater, ViewGroup container,
   //                           Bundle savedInstanceState) {
 
- @Override
+
+
+    @Override
  public View onCreateView(LayoutInflater inflater, ViewGroup container,
                           Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +56,11 @@ public class BedViewFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Toast.makeText(ctx, "" + position, Toast.LENGTH_SHORT).show();
+       //         showDialog(DIALOG_ALERT);
+
             }
         });
      return rootView;
     }
-
-
 
         }
