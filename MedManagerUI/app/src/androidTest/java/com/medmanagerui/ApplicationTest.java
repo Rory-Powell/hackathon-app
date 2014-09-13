@@ -1,4 +1,4 @@
-package com.example.dmurray.medmanagerui;
+package com.medmanagerui;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
