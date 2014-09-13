@@ -6,6 +6,7 @@
 create table bed (
   id                        varchar(255) not null,
   ward_id                   varchar(255),
+  is_occupied               boolean,
   constraint pk_bed primary key (id))
 ;
 
