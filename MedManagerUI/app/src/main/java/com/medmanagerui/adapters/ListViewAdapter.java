@@ -7,11 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.medmanagerui.R;
+import com.medmanagerui.models.DataProvider;
+import com.medmanagerui.models.Patient;
 
 import java.util.List;
 
@@ -30,22 +33,22 @@ public class ListViewAdapter extends BaseAdapter
     public int getCount() {
 
         //return patients.size();
-        return 10;
+        return DataProvider.patientList.size();
     }
 
     public Object getItem(int position) {
 
         //return patients.get(position);
-        return null;
+        return DataProvider.patientList.get(position);
     }
 
     public long getItemId(int position) {
 
         //return patients.get(position)
-        return 0;
+        return Long.getLong(DataProvider.patientList.get(position).getId());
     }
 
-    // create a new ImageView for each item referenced by the Adapter
+    // create a new View for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
 
          if(convertView==null){
@@ -55,12 +58,13 @@ public class ListViewAdapter extends BaseAdapter
             }
 
          // object item based on the position
-         //ObjectItem objectItem = data[position];
+            Patient patient = DataProvider.patientList.get(position);
 
 
          // get the TextView and then set the text (item name) and tag (item ID) values
          //TextView textViewItem = (TextView) convertView.findViewById(R.id.name);
 
+        //ImageButton imageButton = (ImageButton) convertView.findViewById(R.)
          //textViewItem.setText("Name");
          //textViewItem.setTag();
 

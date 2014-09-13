@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="10dp">
 
 
     <!--<TextView-->
@@ -24,15 +25,31 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:weightSum="1"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
 
         <ImageButton
             android:layout_width="100dp"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:id="@+id/imageButton"
             android:adjustViewBounds="true"
             android:clickable="false"
-            android:cropToPadding="true" />
+            android:cropToPadding="true"
+            android:paddingTop="30dp"
+            />
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Name:"
+            android:id="@+id/textView2"
+            android:textSize="20dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:singleLine="false" />
+
     </LinearLayout>
 
 </RelativeLayout>

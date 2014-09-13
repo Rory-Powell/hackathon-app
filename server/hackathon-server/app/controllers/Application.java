@@ -1,7 +1,9 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import models.Bed;
 import models.Staff;
+import models.Ward;
 import play.*;
 
 import play.data.DynamicForm;
@@ -11,6 +13,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
 
+import java.util.List;
 import java.util.Map;
 
 public class Application extends Controller {
@@ -21,7 +24,9 @@ public class Application extends Controller {
     }
 
     public static Result nurse() {
-        return ok(nurse.render());
+        List<Ward> wards = Ward.find.all();
+        List<Bed> beds = Bed.find.all();
+        return ok(nurse.render(wards, beds));
     }
 
     public static Result login() {
@@ -57,7 +62,12 @@ public class Application extends Controller {
         }
     }
     public static Result nursepatientdetails() {
-        return ok(nursepatientdetails.render());
+        List<Bed> beds = Bed.find.all();
+        List<Ward> wards = Ward.find.all();
+
+        return ok(nursepatientdetails.render(wards, beds));
+
+
     }
 
 }
