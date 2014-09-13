@@ -3,8 +3,11 @@ package com.medmanagerui;
 import android.app.Activity;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +18,16 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 
 import com.medmanagerui.fragments.BedViewFragment;
+import com.medmanagerui.models.DataProvider;
+import com.medmanagerui.models.Patient;
+import com.medmanagerui.models.Ward;
+import com.medmanagerui.networking.NetworkingService;
+
+import java.util.List;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class MainActivity extends Activity
@@ -33,6 +46,34 @@ public class MainActivity extends Activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        final ProgressDialog dialog = ProgressDialog.show(this, "",
+                "Loading. Please wait...", true);
+        new NetworkingService().allPatients(new Callback<List<Patient>>() {
+            @Override
+            public void success(List<Patient> patients, Response response) {
+                DataProvider.patientList = patients;
+                dialog.hide();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                System.out.print("");
+            }
+        });
+
+        new NetworkingService().allWards(new Callback<List<Ward>>() {
+            @Override
+            public void success(List<Ward> wards, Response response) {
+                DataProvider.wardList = wards;
+                dialog.hide();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                System.out.print("");
+            }
+        });
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ctx=this;
