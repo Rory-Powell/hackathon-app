@@ -22,6 +22,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+    private Context ctx;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -36,7 +37,7 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ctx=this;
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -51,9 +52,19 @@ public class MainActivity extends Activity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
+        switch (position){
+        case 1:
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, BedViewFragment.newInstance(ctx))
                 .commit();
+        break;
+        case 2:
+        fragmentManager.beginTransaction()
+        .replace(R.id.container, BedViewFragment.newInstance(ctx))
+        .commit();
+        break;
+    }
+
     }
 
     public void onSectionAttached(int number) {
