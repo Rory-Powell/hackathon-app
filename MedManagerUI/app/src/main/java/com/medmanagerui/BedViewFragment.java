@@ -44,7 +44,7 @@ public class BedViewFragment extends Fragment {
 
      //   setContentView(R.layout.fragment_bed_view);
 
-        GridView gridview = (GridView) getView().findViewById(R.id.gridview);
+        GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
         gridview.setAdapter(new GridViewAdapter(ctx));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -54,19 +54,6 @@ public class BedViewFragment extends Fragment {
      return rootView;
     }
 
-  /*  @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
 
 
-        View rootView = inflater.inflate(R.layout.fragment_bed_view, container, false);
-        return rootView;
-    }*/
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        ((MainActivity) activity).onSectionAttached(
-                getArguments().getInt(ARG_SECTION_NUMBER));
-    }
-}
+        }
