@@ -47,12 +47,18 @@ public class DocNavigation extends Activity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
+
+    /*****************
+    Replace placeholder fragment with BedViewFragment
+     *****************/
+
+
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, BedViewFragment.newInstance(position + 1))
                 .commit();
     }
 
@@ -63,9 +69,6 @@ public class DocNavigation extends Activity
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
-                break;
-            case 3:
-                mTitle = getString(R.string.title_section3);
                 break;
         }
     }
