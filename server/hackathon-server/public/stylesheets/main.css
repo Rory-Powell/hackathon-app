@@ -3,10 +3,8 @@
     margin-top:50px;
 }
 .ward-details {
-    margin-top: 0;
-    border: 1px solid #ccc;
+    margin-top: 10px;
     border-radius: 5px;
-    box-shadow: 0px 0px 4px #ccc;
 }
 
 .ward-details .heading {
@@ -25,10 +23,8 @@
 
 
 .main-view {
-    margin-top: 0;
-    border: 1px solid #ccc;
+    margin-top: 5px;
     border-radius: 5px;
-    box-shadow: 0px 0px 4px #ccc;
 }
 
 .main-view .heading {
@@ -48,4 +44,52 @@
 
 .main-title {
     color:#66C266;
+}
+
+.wards {
+    background-color: #ccc;
+    padding:10px 20px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+}
+
+.ward {
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding:5px;
+    margin-top: 5px;
+    list-style: none;
+
+}
+
+.gallery {
+    padding: 0 40px;
+    position: relative;
+}
+
+.gallery p {
+    color:#ccc;
+}
+.gallery ul {
+    list-style: none;
+}
+.gallery ul li {
+    background: #fff;
+    display: inline;
+    list-style: none;
+    float: left;
+    margin: 0 10px 10px 0;
+    padding: 0;
+    text-align:center;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+
+.gallery:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    right: 0;
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.medmanagerui.adapters.GridViewAdapter;
@@ -44,20 +45,13 @@ public class DoctorMainViewFragment extends Fragment {
 
         //   setContentView(R.layout.fragment_doctor_main_view);
 
-        GridView gridview = (GridView) getView().findViewById(R.id.gridview);
-        gridview.setAdapter(new GridViewAdapter(ctx));
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView listview = (ListView) getView().findViewById(R.id.listView);
+        listview.setAdapter(new GridViewAdapter(ctx));
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Toast.makeText(ctx, "" + position, Toast.LENGTH_SHORT).show();
             }
         });
         return rootView;
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        ((MainActivity) activity).onSectionAttached(
-                getArguments().getInt(ARG_SECTION_NUMBER));
     }
 }
