@@ -50,7 +50,7 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/patientBed"
-                android:text="5"
+                android:text="@string/patientBedData"
                 android:textAlignment="center"
                 android:editable="false"
                 android:enabled="false"
@@ -74,7 +74,7 @@
                 android:inputType="text"
                 android:ems="10"
                 android:id="@+id/patientWard"
-                android:text="Dalra"
+                android:text="@string/patientWardData"
                 android:textAlignment="center"
                 android:editable="false"
                 android:enabled="false"
@@ -82,83 +82,82 @@
                 android:textSize="15dp" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Allergies:"
-            android:id="@+id/labelAllergies"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Allergies:"
+                android:id="@+id/labelAllergies"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:id="@+id/patientAllergies"
-            android:hint="30/10/1995"
-            android:text="None"
-            android:enabled="false"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/patientAllergies"
+                android:text="@string/patientAllergiesData"
+                android:enabled="false"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Medication:"
-            android:id="@+id/labelMedication"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Medication:"
+                android:id="@+id/labelMedication"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            android:id="@+id/patientMedication"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="None" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/patientMedication"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/patientMedicationData" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Vaccinations:"
-            android:id="@+id/labelVaccinations"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Vaccinations:"
+                android:id="@+id/labelVaccinations"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            android:id="@+id/patientVaccinations"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="None" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/patientVaccinations"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/patientVaccinationsData" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Aliment:"
-            android:id="@+id/labelAliment"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Aliment:"
+                android:id="@+id/labelAliment"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            android:id="@+id/patientAliment"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="Sore Knee" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/patientAliment"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/patientAlimentData" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -185,11 +184,11 @@
             android:inputType="date"
             android:ems="10"
             android:id="@+id/patientDOB"
-            android:hint="30/10/1995"
-            android:text="30/10/1995"
-            android:enabled="false"
+            android:text="@string/patientDOBData"
+            android:enabled="true"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="15dp"
+            android:editable="false" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -206,8 +205,7 @@
             android:inputType="textMultiLine"
             android:ems="10"
             android:id="@+id/patientAddress"
-            android:hint="74 BlahBlah"
-            android:text="74 Springfields, Banbridge"
+            android:text="@string/patientAddressData"
             android:enabled="false"
             android:paddingLeft="15dp"
             android:layout_marginLeft="15dp"
@@ -226,8 +224,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/patientDoctor"
-            android:hint="Dr Couples"
-            android:text="Dr. Beggs"
+            android:text="@string/patientDoctorData"
             android:enabled="false"
             android:paddingLeft="15dp"
             android:layout_marginLeft="15dp"
