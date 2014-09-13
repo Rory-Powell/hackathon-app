@@ -37,3 +37,29 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $(".bed").click(function () {
+        console.log("hello");
+        $(this).animate({
+            backgroundColor: "green"
+        }, 1000);
+        $(this).animate({
+            backgroundColor: "#ccc"
+        }, 1000);
+    });
+});
+
+$(document).ready(function(){
+    $(".bed li").hide();
+    $(".wards").click(function(){
+        $(".wards li").each(function() {
+            $(this).fadeIn(1000);
+        });
+        $(".beds").animate({
+        });
+        $(".beds li").each(function() {
+            $(this).fadeIn(1000);
+        });
+    });
+});
+

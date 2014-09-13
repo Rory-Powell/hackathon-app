@@ -3,7 +3,7 @@
     margin-top:50px;
 }
 .ward-details {
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 5px;
 }
 
@@ -62,29 +62,40 @@
 
 }
 
+.bed {
+    border-radius: 5px;
+
+}
+
 .gallery {
-    padding: 0 40px;
+    padding: 0 5px;
     position: relative;
 }
 
 .gallery p {
-    color:#ccc;
+    color:#000;
 }
+
+.gallery num {
+    color:#000;
+    font-size:23;
+}
+
 .gallery ul {
     list-style: none;
 }
+
 .gallery ul li {
     background: #fff;
     display: inline;
     list-style: none;
     float: left;
-    margin: 0 10px 10px 0;
+    margin: 0 20px 20px 0;
     padding: 0;
     text-align:center;
     color: #000;
     border: 1px solid #ccc;
 }
-
 
 .gallery:before {
     position: absolute;

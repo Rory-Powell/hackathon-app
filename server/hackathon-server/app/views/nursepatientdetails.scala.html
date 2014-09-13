@@ -55,13 +55,17 @@
                                 <div class="col-sm-9">
                                     <div class="main-view">
                                         <div class="heading"><h4>  Details</h4> </div>
-                                        <div class="body">@for(ward <- wards) {
-                                            @ward.name
-                                            <ul class="beds">
-                                                <script></script>
+                                        <div class="gallery">@for(ward <- wards) {
+                                            <ul class="gallery">
                                             @for(bed <- beds) {
                                                 @if(bed.id == ward.id){
-                                                    <li class="bed"> <img src="@routes.Assets.at("images/bed1.png")" style="width:112;height:=112">
+                                                    <li class="gallery">
+                                                        <p> @bed.id </p>
+                                                        <img src="@routes.Assets.at("images/bed1.png")" style="width:112;height:=112">
+                                                        <span>
+                                                            <p>Doctor:</p>
+                                                        </span>
+
                                                     </li>
                                                 }
                                             }
