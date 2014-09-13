@@ -5,7 +5,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.example.dmurray.medmanagerui.R;
+import medmanagerui.R;
 
 public class GridViewAdapter extends BaseAdapter {
     private Context mContext;

@@ -3,6 +3,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,12 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 
-import com.example.dmurray.medmanagerui.R;
+import medmanagerui.R;
 
 
 public class DocNavigation extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+    private Context ctx;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -53,7 +55,7 @@ public class DocNavigation extends Activity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, BedViewFragment.newInstance(position + 1))
+                .replace(R.id.container, BedViewFragment.newInstance(ctx))
                 .commit();
     }
 
