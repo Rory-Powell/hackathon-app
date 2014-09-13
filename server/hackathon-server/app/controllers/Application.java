@@ -13,7 +13,11 @@ public class Application extends Controller {
     }
 
     public static Result nurse() {
-        return ok(nurse.render("This is the nurse page"));
+        return ok(nurse.render());
+    }
+
+    public static Result nursepatientdetails() {
+        return ok(nursepatientdetails.render());
     }
 
 }
