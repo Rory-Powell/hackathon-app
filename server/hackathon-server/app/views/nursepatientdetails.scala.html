@@ -31,7 +31,7 @@
                         <div class="row" id="details-row" style="display:none;">
                             <div class="col-sm-3 ">
                                 <div class="ward-details">
-                                    <div class="heading"> Wards/Beds</div>
+                                    <div class="heading"><h4>Wards/Beds</h4> </div>
                                     <div class="body">
                                         <ul class="wards"><span class="glyphicon glyphicon-plus"></span> <strong><u>Wards</u></strong>
                                             @for(ward <- wards) {
@@ -54,8 +54,24 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="main-view">
-                                        <div class="heading"> Details</div>
-                                        <div class="body">Hello</div>
+                                        <div class="heading"><h4>  Details</h4> </div>
+                                        <div class="gallery">@for(ward <- wards) {
+                                            <ul class="gallery">
+                                            @for(bed <- beds) {
+                                                @if(bed.id == ward.id){
+                                                    <li class="gallery">
+                                                        <p> @bed.id </p>
+                                                        <img src="@routes.Assets.at("images/bed1.png")" style="width:112;height:=112">
+                                                        <span>
+                                                            <p>Doctor:</p>
+                                                        </span>
+                                                    </li>
+                                                }
+                                            }
+
+                                            </ul>
+
+                                        }</div>
                                     </div>
                                 </div>
                             </div>

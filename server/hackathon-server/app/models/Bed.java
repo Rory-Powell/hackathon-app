@@ -16,6 +16,8 @@ public class Bed extends Model {
     @ManyToOne(cascade= CascadeType.ALL)
     public Ward ward;
 
+    public boolean isOccupied;
+
     public static Finder<String, Bed> find = new Finder<>(
             String.class, Bed.class
     );
