@@ -1,5 +1,7 @@
 
-
+.container {
+    margin-top:50px;
+}
 .ward-details {
     margin-top: 0;
     border: 1px solid #ccc;
@@ -48,6 +50,7 @@
     color:#66C266;
 }
 
+<<<<<<< HEAD
 .wards {
     background-color: #ccc;
     padding:10px 20px;
@@ -64,3 +67,36 @@
 }
 
 
+=======
+.gallery {
+    padding: 0 40px;
+    position: relative;
+}
+
+.gallery p {
+    color:#ccc;
+}
+.gallery ul {
+    list-style: none;
+}
+.gallery ul li {
+    background: #fff;
+    display: inline;
+    list-style: none;
+    float: left;
+    margin: 0 10px 10px 0;
+    padding: 0;
+    text-align:center;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+
+.gallery:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    right: 0;
+}
+>>>>>>> 8e40ea254dd894d462c9a3885126806fd576ba17
