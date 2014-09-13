@@ -66,8 +66,6 @@
 
 }
 
-
-=======
 .gallery {
     padding: 0 5px;
     position: relative;
@@ -76,6 +74,7 @@
 .gallery p {
     color:#000;
 }
+
 .gallery num {
     color:#000;
     font-size:23;
@@ -84,6 +83,7 @@
 .gallery ul {
     list-style: none;
 }
+
 .gallery ul li {
     background: #fff;
     display: inline;
@@ -96,7 +96,6 @@
     border: 1px solid #ccc;
 }
 
-
 .gallery:before {
     position: absolute;
     content: "";
@@ -104,4 +103,3 @@
     left: 0;
     right: 0;
 }
->>>>>>> 8e40ea254dd894d462c9a3885126806fd576ba17
