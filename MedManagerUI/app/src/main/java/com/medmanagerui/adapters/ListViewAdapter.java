@@ -59,8 +59,9 @@ public class ListViewAdapter extends BaseAdapter
 
 
          // get the TextView and then set the text (item name) and tag (item ID) values
-         TextView textViewItem = (TextView) convertView.findViewById(R.id.name);
-         textViewItem.setText("Name");
+         //TextView textViewItem = (TextView) convertView.findViewById(R.id.name);
+
+         //textViewItem.setText("Name");
          //textViewItem.setTag();
 
          return convertView;
