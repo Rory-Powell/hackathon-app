@@ -15,6 +15,7 @@ public class Application extends Controller {
 
     public static Result index() {
         return ok(index.render("Your new application is ready."));
+
     }
 
     public static Result nurse() {
@@ -28,7 +29,7 @@ public class Application extends Controller {
 
         ObjectNode result = Json.newObject();
 
-        if(null == requestData) {
+        if (null == requestData) {
             result.put("success", false);
             result.put(
                     "message",
@@ -40,7 +41,7 @@ public class Application extends Controller {
         final String userID = requestData.get("id");
         final String password = requestData.get("password");
 
-        if(null == userID || null == password) {
+        if (null == userID || null == password) {
             result.put("success", false);
             result.put(
                     "message",
@@ -51,7 +52,7 @@ public class Application extends Controller {
 
         Staff staff = Staff.find.where().eq("id", userID).eq("password", password).findUnique();
 
-        if(staff != null) {
+        if (staff != null) {
 
             Controller.session("email", userID);
             /** TODO redirect to appropriate doctor or nurse screen **/
@@ -66,7 +67,9 @@ public class Application extends Controller {
             );
             return ok(result);
         }
-
+    }
+    public static Result nursepatientdetails() {
+        return ok(nursepatientdetails.render());
     }
 
 }
