@@ -11,5 +11,7 @@ public class DataProvider {
 
     public static List<Ward> wardList;
 
+    public static List<Bed> bedList;
+
 
 }

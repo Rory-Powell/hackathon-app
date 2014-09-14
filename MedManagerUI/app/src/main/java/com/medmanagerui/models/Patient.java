@@ -1,6 +1,10 @@
 package com.medmanagerui.models;
 
+import com.medmanagerui.networking.NetworkingService;
+
 import java.util.Calendar;
+
+import retrofit.Callback;
 
 public class Patient {
 
@@ -14,9 +18,9 @@ public class Patient {
 
     private String gp;
 
-    private String doctorId;
+    private String doctor;
 
-    private String previousDocId;
+    private String previousDoctor;
 
     private String ailment;
 
@@ -69,20 +73,20 @@ public class Patient {
         this.gp = gp;
     }
 
-    public String getDoctorId() {
-        return doctorId;
+    public String getPreviousDoctor() {
+        return previousDoctor;
     }
 
-    public void setDoctorId(String doctorId) {
-        this.doctorId = doctorId;
+    public void setPreviousDoctor(String doctorId) {
+        this.previousDoctor = doctorId;
     }
 
-    public String getPreviousDocId() {
-        return previousDocId;
+    public String getDoctor() {
+        return doctor;
     }
 
-    public void setPreviousDocId(String previousDocId) {
-        this.previousDocId = previousDocId;
+    public void setDoctor(String previousDocId) {
+        this.doctor = previousDocId;
     }
 
     public String getAilment() {
@@ -115,5 +119,8 @@ public class Patient {
 
     public void setBed(int bed) {
         this.bed = bed;
+    }
+    public void save(Callback cb) {
+        new NetworkingService().savePatient(this, cb);
     }
 }

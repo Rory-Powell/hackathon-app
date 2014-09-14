@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 
 import com.medmanagerui.fragments.BedViewFragment;
+import com.medmanagerui.models.Bed;
 import com.medmanagerui.models.DataProvider;
 import com.medmanagerui.models.Patient;
 import com.medmanagerui.models.Ward;
@@ -54,6 +55,19 @@ public class MainActivity extends Activity
             public void success(List<Patient> patients, Response response) {
                 DataProvider.patientList = patients;
                 dialog.hide();
+                Patient patient = patients.get(0);
+                patient.setName("Glenn");
+                patient.save(new Callback() {
+                    @Override
+                    public void success(Object o, Response response) {
+                        //Handle Success
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+                        //Handle Error
+                    }
+                });
             }
 
             @Override
@@ -66,6 +80,19 @@ public class MainActivity extends Activity
             @Override
             public void success(List<Ward> wards, Response response) {
                 DataProvider.wardList = wards;
+                dialog.hide();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                dialog.hide();
+            }
+        });
+
+        new NetworkingService().allBeds(new Callback<List<Bed>>() {
+            @Override
+            public void success(List<Bed> beds, Response response) {
+                DataProvider.bedList = beds;
                 dialog.hide();
             }
 

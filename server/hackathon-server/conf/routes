@@ -9,7 +9,9 @@ GET         /nursepatientdetails        controllers.Application.nursepatientdeta
 POST        /login                      controllers.Application.login()
 GET         /mobile/allPatients         controllers.Mobile.fetchAllPatients()
 GET         /mobile/allBeds             controllers.Mobile.fetchAllBeds()
-GET         /mobile/allWards             controllers.Mobile.fetchAllWards()
+GET         /mobile/allWards            controllers.Mobile.fetchAllWards()
+POST        /mobile/savePatient         controllers.Mobile.savePatient()
+
 
 
 # Map static resources from the /public folder to the /assets URL path
