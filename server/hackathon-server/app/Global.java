@@ -33,7 +33,9 @@ public class Global extends GlobalSettings {
                 patient.dob = Calendar.getInstance();
                 patient.gp = "belfast" + i;
                 patient.name = "name" + i;
-                patient.notes = "notes" + 1;
+                patient.notes = "notes" + i;
+                patient.vaccinations = "vaccinations" +i;
+                patient.medication = "medication" +i;
                 patient.save();
             }
         }
