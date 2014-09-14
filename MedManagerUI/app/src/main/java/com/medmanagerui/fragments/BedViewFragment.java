@@ -65,9 +65,8 @@ public class BedViewFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_bed_view, container, false);
 
-
-
         GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
+  //      gridview.setBackgroundResource();
         gridview.setAdapter(new GridViewAdapter(ctx));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -108,6 +107,7 @@ public class BedViewFragment extends Fragment {
                 patient.setBed(position);
               //  patient.setDoctorId(doctorSpinner.getSelectedItem().toString());
                 alertDialogBuilder.setCancelable(false)
+                        .setTitle("Patient Check-In")
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
