@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import com.medmanagerui.fragments.BedViewFragment;
+import com.medmanagerui.fragments.BlankFragment;
 import com.medmanagerui.fragments.DoctorMainViewFragment;
 import com.medmanagerui.models.Bed;
 import com.medmanagerui.models.DataProvider;
@@ -50,7 +51,6 @@ public class MainActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ctx=this;
@@ -62,6 +62,12 @@ public class MainActivity extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        FragmentManager fragmentManager = getFragmentManager();
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, BlankFragment.newInstance(ctx, null))
+                .commit();
     }
 
     @Override
