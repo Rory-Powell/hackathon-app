@@ -52,7 +52,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Amit Sharma "
-                android:id="@+id/textView4"
+                android:id="@+id/textAttempts"
                 android:textSize="20dp"
                 android:singleLine="false"
                 android:paddingLeft="5dp" />
