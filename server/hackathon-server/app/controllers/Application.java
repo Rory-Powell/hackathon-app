@@ -66,7 +66,6 @@ public class Application extends Controller {
         List<Ward> wards = Ward.find.all();
 
         return ok(nursepatientdetails.render(wards, beds));
-
     }
 
     public static Result patient() {

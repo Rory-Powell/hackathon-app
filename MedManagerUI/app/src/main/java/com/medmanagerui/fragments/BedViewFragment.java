@@ -66,7 +66,7 @@ public class BedViewFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_bed_view, container, false);
 
         GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
-  //      gridview.setBackgroundResource();
+
         gridview.setAdapter(new GridViewAdapter(ctx));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -92,7 +92,7 @@ public class BedViewFragment extends Fragment {
                     }
                 }
          //*populate spinner
-                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ctx,R.layout.checkin_spinner,spinnerArray); //selected item will look like a spinner set from XML
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ctx,android.R.layout.simple_spinner_dropdown_item,spinnerArray); //selected item will look like a spinner set from XML
                 spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 patientSpinner.setAdapter(spinnerArrayAdapter);
 

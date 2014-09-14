@@ -21,6 +21,7 @@ import com.medmanagerui.fragments.DoctorMainViewFragment;
 import com.medmanagerui.models.Bed;
 import com.medmanagerui.models.DataProvider;
 import com.medmanagerui.models.Patient;
+import com.medmanagerui.models.Staff;
 import com.medmanagerui.models.Ward;
 import com.medmanagerui.networking.NetworkingService;
 
@@ -49,46 +50,6 @@ public class MainActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        final ProgressDialog dialog = ProgressDialog.show(this, "",
-                "Loading. Please wait...", true);
-        new NetworkingService().allPatients(new Callback<List<Patient>>() {
-            @Override
-            public void success(List<Patient> patients, Response response) {
-                DataProvider.patientList = patients;
-                dialog.hide();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                dialog.hide();
-            }
-        });
-
-        new NetworkingService().allWards(new Callback<List<Ward>>() {
-            @Override
-            public void success(List<Ward> wards, Response response) {
-                DataProvider.wardList = wards;
-                dialog.hide();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                dialog.hide();
-            }
-        });
-
-        new NetworkingService().allBeds(new Callback<List<Bed>>() {
-            @Override
-            public void success(List<Bed> beds, Response response) {
-                DataProvider.bedList = beds;
-                dialog.hide();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                dialog.hide();
-            }
-        });
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
