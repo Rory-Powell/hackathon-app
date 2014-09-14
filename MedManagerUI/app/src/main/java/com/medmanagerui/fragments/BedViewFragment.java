@@ -75,9 +75,6 @@ public class BedViewFragment extends Fragment {
         gridview.setAdapter(new GridViewAdapter(ctx));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, final int position, long id) {
-       //         Toast.makeText(ctx, "" + position, Toast.LENGTH_SHORT).show();
-
-
 
                 LayoutInflater li = LayoutInflater.from(ctx);
                 View promtsView = li.inflate(R.layout.checkin_spinner, null);
@@ -102,7 +99,6 @@ public class BedViewFragment extends Fragment {
                 patientSpinner.setAdapter(spinnerArrayAdapter);
 
 
-
                 final Spinner doctorSpinner = (Spinner) promtsView.findViewById(R.id.spinnerDoctor);
 
                 ArrayList<String> docspinnerArray = new ArrayList<String>();
@@ -117,24 +113,19 @@ public class BedViewFragment extends Fragment {
                     }
                 }
                 //*populate spinner
-                ArrayAdapter<String> docspinnerArrayAdapter = new ArrayAdapter<String>(ctx,android.R.layout.simple_spinner_dropdown_item,spinnerArray); //selected item will look like a spinner set from XML
+                ArrayAdapter<String> docspinnerArrayAdapter = new ArrayAdapter<String>(ctx,android.R.layout.simple_spinner_dropdown_item,docspinnerArray); //selected item will look like a spinner set from XML
                 docspinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 doctorSpinner.setAdapter(docspinnerArrayAdapter);
 
 
-                bed =new Bed();
-                patient = new Patient();
-//                patient.setName(patientSpinner.getSelectedItem().toString());
-
-              //  patient.setDoctorId(doctorSpinner.getSelectedItem().toString());
                 alertDialogBuilder.setCancelable(false)
                         .setTitle("Patient Check-In")
                         .setPositiveButton("Save",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
-                                        patient.setBed(position);
-                                        patient.setDoctor(docnameArray.get(position).id);
-
+                                        patient = DataProvider.patientList.get(patientSpinner.getSelectedItemPosition());
+                                        patient.setBed(Integer.valueOf(DataProvider.bedList.get(position).id));
+                                        patient.setDoctor(DataProvider.staffList.get(doctorSpinner.getSelectedItemPosition()).id);
                                         patient.save(new Callback() {
                                             @Override
                                             public void success(Object o, Response response) {

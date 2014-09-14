@@ -42,6 +42,7 @@ public class InfoPatientFragment extends Fragment {
     private Context ctx;
     public static Patient patient;
 
+
     public static InfoPatientFragment newInstance(Context context) {
         InfoPatientFragment fragment = new InfoPatientFragment();
         fragment.ctx=context;
@@ -69,13 +70,13 @@ public class InfoPatientFragment extends Fragment {
         allergiesEditText.setText(patient.getAllergies());
 
         medicationEditText = (EditText) rootView.findViewById(R.id.patientMedication);
-        medicationEditText.setText(patient.getAllergies());
+        medicationEditText.setText(patient.getMedication());
 
         vaccinationsEditText = (EditText) rootView.findViewById(R.id.patientVaccinations);
-        vaccinationsEditText.setText(patient.getAllergies());
+        vaccinationsEditText.setText(patient.getVaccinations());
 
         alimentEditText = (EditText) rootView.findViewById(R.id.patientAliment);
-        alimentEditText.setText(patient.getAllergies());
+        alimentEditText.setText(patient.getAilment());
 
 
         btnAllergies.setOnClickListener(new View.OnClickListener() {

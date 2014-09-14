@@ -56,7 +56,7 @@
         android:id="@+id/linearLayout">
 
         <TextView
-            android:id="@+id/textAttempts"
+            android:id="@+id/patient_Name"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/attempts"
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/textView1"
             android:text="TextView"
-            android:layout_alignBaseline="@+id/textAttempts"
+            android:layout_alignBaseline="@+id/patient_Name"
             android:layout_centerHorizontal="true" />
 
     </LinearLayout>

@@ -83,8 +83,8 @@ public class Mobile extends Controller {
             patient.address = json.get("address").textValue();
 
             patient.gp = json.get("gp").textValue();
-            if(null != json.get("doctor")) {
-                patient.doctor = Staff.find.byId(json.get("doctor").textValue());
+            if(null != json.get("doctor").get("id")) {
+                patient.doctor = Staff.find.byId(json.get("doctor").get("id").textValue());
             }
             if(null != json.get("previousDoctor")) {
                 patient.previousDoctor = Staff.find.byId(json.get("previousDoctor").textValue());
@@ -92,8 +92,8 @@ public class Mobile extends Controller {
             patient.ailment = json.get("ailment").textValue();
             patient.allergies = json.get("allergies").textValue();
             patient.notes = json.get("notes").textValue();
-            if(null != json.get("previousDoctor")) {
-                patient.bed = Bed.find.byId(json.get("bed").textValue());
+            if(null != json.get("bed")) {
+                patient.bed = Bed.find.byId(json.get("bed").get("id").textValue());
             }
 
             patient.update();

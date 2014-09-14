@@ -141,7 +141,9 @@
                     android:ems="10"
                     android:id="@+id/patientMedication"
                     android:layout_marginLeft="15dp"
-                    android:text="@string/patientMedicationData" />
+                    android:text="@string/patientMedicationData"
+                android:editable="false"
+                android:enabled="false" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -175,7 +177,8 @@
                     android:ems="10"
                     android:id="@+id/patientVaccinations"
                     android:layout_marginLeft="15dp"
-                android:text="@string/patientVaccinationsData" />
+                android:text="@string/patientVaccinationsData"
+                android:enabled="false" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -209,7 +212,8 @@
                     android:ems="10"
                     android:id="@+id/patientAliment"
                     android:layout_marginLeft="15dp"
-                android:text="@string/patientAlimentData" />
+                android:text="@string/patientAlimentData"
+                android:enabled="false" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -247,7 +251,7 @@
             android:ems="10"
             android:id="@+id/patientDOB"
             android:text="@string/patientDOBData"
-            android:enabled="true"
+            android:enabled="false"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:editable="false" />

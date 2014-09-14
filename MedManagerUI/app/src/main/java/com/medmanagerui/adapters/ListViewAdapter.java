@@ -7,10 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.medmanagerui.InfoPatientFragment;
@@ -37,6 +34,7 @@ public class ListViewAdapter extends BaseAdapter
 
     public int getCount() {
         return DataProvider.patientList.size();
+        //return 5;
     }
 
     public Object getItem(int position) {
@@ -60,17 +58,50 @@ public class ListViewAdapter extends BaseAdapter
                 convertView = inflater.inflate(R.layout.patient_cell, parent, false);
             }
 
+        Patient thePatient = patients.get(position);
 
+        TextView textViewName = (TextView) convertView.findViewById(R.id.patient_Name);
+        if(thePatient.getName() != null)
+            textViewName.setText(thePatient.getName());
+        else
+            textViewName.setText("First Last");
 
-         // object item based on the position
-         //Patient patient = DataProvider.patientList.get(position);
+        TextView textViewBed = (TextView) convertView.findViewById(R.id.patient_Bed);
+        if(thePatient.getBed() != null)
+            textViewBed.setText(thePatient.getBed().toString());
+        else
+            textViewBed.setText("Unassigned");
 
-
-         // get the TextView and then set the text (item name) and tag (item ID) values
-         //TextView textViewItem = (TextView) convertView.findViewById(R.id.name);
+        TextView textViewWard = (TextView) convertView.findViewById(R.id.patient_Ward);
+        if(thePatient.getBed() != null)
+            textViewWard.setText(thePatient.getBed().getWardName());
+        else
+            textViewWard.setText("Unassigned");
 
         ImageButton imageButton = (ImageButton) convertView.findViewById(R.id.imageButton);
-                imageButton.setOnClickListener(new View.OnClickListener() {
+
+        char initial = thePatient.getName().charAt(0);
+
+        switch(initial)
+        {
+            case 'G':
+                imageButton.setImageResource(R.drawable.letter_g);
+                break;
+            case 'R':
+                imageButton.setImageResource(R.drawable.letter_r);
+                break;
+            case 'D':
+                imageButton.setImageResource(R.drawable.letter_d);
+                break;
+            case 'A':
+                imageButton.setImageResource(R.drawable.letter_a);
+                break;
+            default:
+                imageButton.setImageResource(R.drawable.logo2);
+                break;
+        }
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view)
                     {
@@ -80,11 +111,8 @@ public class ListViewAdapter extends BaseAdapter
                         mFrag.beginTransaction()
                                 .replace(R.id.container, InfoPatientFragment.newInstance(mContext))
                                 .commit();
-
                     }
                 });
-         //textViewItem.setText("Name");
-         //textViewItem.setTag();
 
          return convertView;
     }
