@@ -60,16 +60,25 @@ public class ListViewAdapter extends BaseAdapter
                 convertView = inflater.inflate(R.layout.patient_cell, parent, false);
             }
 
-
-
          // object item based on the position
          //Patient patient = DataProvider.patientList.get(position);
-
 
          // get the TextView and then set the text (item name) and tag (item ID) values
          //TextView textViewItem = (TextView) convertView.findViewById(R.id.name);
 
+        TextView textViewName = (TextView) convertView.findViewById(R.id.patient_Name);
+        textViewName.setText(patients.get(position).getName());
+
+//        TextView textViewWard = (TextView) convertView.findViewById(R.id.patient_Ward);
+//        textViewWard.setText(patients.get(position).getBed());
+
+//        TextView textViewBed = (TextView) convertView.findViewById(R.id.patient_Bed);
+//        textViewBed.setText(patients.get(position).getBed());
+
         ImageButton imageButton = (ImageButton) convertView.findViewById(R.id.imageButton);
+
+        imageButton.setImageResource(R.drawable.logo);
+
                 imageButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view)
