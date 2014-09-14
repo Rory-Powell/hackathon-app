@@ -47,8 +47,8 @@ public class GridViewAdapter extends BaseAdapter {
 
     // references to our images
     private int[] mThumbIds = {
-            R.drawable.square, R.drawable.square,
-            R.drawable.square, R.drawable.square,
-            R.drawable.square, R.drawable.square,
+            R.drawable.bed1, R.drawable.bed1,
+            R.drawable.bed1, R.drawable.bed1,
+            R.drawable.bed1, R.drawable.bed1,
     };
 }

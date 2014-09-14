@@ -123,28 +123,11 @@ public class BedViewFragment extends Fragment {
                                     }
                                 });
 
-                //AlertDialog alertDialog = new AlertDialog.Builder(ctx).create(); //Read Update
-                //alertDialog.setTitle("Allergies");
-                //alertDialog.setMessage("Allergies Edit Window");
 
-
-                //alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE,"Okay", new DialogInterface.OnClickListener() {
-                //public void onClick(DialogInterface dialog, int which) {
-                // here you can add functions
-                // }
-                //});
 
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();  //<-- See This!
 
-         //       DialogFragment newFragment = new PatientCheckInDialogFragment();
-           //     newFragment.show(getFragmentManager() ,"");
-       //        AlertDialog alertDialog = new AlertDialog.Builder(ctx).create(); //Read Update
-         //       alertDialog.setTitle("Patient Check-In");
-           //     alertDialog.setMessage("Select Doctor and Patient");
-
-           //     alertDialog.show();
-          //      builder.create();
 
             }
         });
