@@ -12,4 +12,4 @@
     android:horizontalSpacing="50dp"
     android:stretchMode="none"
     android:gravity="center"
-    />
+    android:choiceMode="singleChoice" />

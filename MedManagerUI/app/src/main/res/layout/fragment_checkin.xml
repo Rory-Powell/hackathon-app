@@ -92,32 +92,30 @@
                 android:layout_marginTop="5dp" />
 
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/layoutAllergies">
+             <LinearLayout
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0px"
+                android:layout_height="0px" />
 
             <EditText
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:ems="10"
-                    android:id="@+id/patientAllergies"
-                    android:text="@string/patientAllergiesData"
-                    android:enabled="false"
-                    android:layout_marginLeft="15dp"
-                android:editable="true" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Edit"
-                android:id="@+id/buttonAllergies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/patientAllergies"
+                android:text="@string/patientAllergiesData"
+                android:enabled="false"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textSize="12dp" />
-        </LinearLayout>
+                android:editable="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:id="@+id/buttonAllergies"
+            android:layout_marginLeft="15dp" />
 
         <TextView
                 android:layout_width="wrap_content"
@@ -128,32 +126,17 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layoutMedication">
-
             <EditText
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:ems="10"
-                    android:id="@+id/patientMedication"
-                    android:layout_marginLeft="15dp"
-                    android:text="@string/patientMedicationData" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Edit"
-                android:id="@+id/buttonMedication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/patientMedication"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textSize="12dp" />
-        </LinearLayout>
+                android:text="@string/patientMedicationData" />
 
-        <TextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -162,32 +145,17 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layoutVaccinations">
-
             <EditText
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:ems="10"
-                    android:id="@+id/patientVaccinations"
-                    android:layout_marginLeft="15dp"
-                android:text="@string/patientVaccinationsData" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Edit"
-                android:id="@+id/buttonVaccinations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/patientVaccinations"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textSize="12dp" />
-        </LinearLayout>
+                android:text="@string/patientVaccinationsData" />
 
-        <TextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -196,30 +164,15 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="5dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layoutAliment">
-
             <EditText
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="textMultiLine"
-                    android:ems="10"
-                    android:id="@+id/patientAliment"
-                    android:layout_marginLeft="15dp"
-                android:text="@string/patientAlimentData" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Edit"
-                android:id="@+id/buttonAliment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/patientAliment"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:textSize="12dp" />
-        </LinearLayout>
+                android:text="@string/patientAlimentData" />
 
         <TextView
             android:layout_width="wrap_content"

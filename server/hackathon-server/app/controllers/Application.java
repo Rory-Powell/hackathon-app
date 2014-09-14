@@ -68,4 +68,10 @@ public class Application extends Controller {
         return ok(nursepatientdetails.render(wards, beds));
     }
 
+    public static Result patient() {
+        List<Bed> beds = Bed.find.all();
+        List<Ward> wards = Ward.find.all();
+        return ok(patient.render(wards, beds));
+    }
+
 }
