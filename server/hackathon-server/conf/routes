@@ -4,10 +4,8 @@
 
 # Home page
 GET         /                           controllers.Application.index()
-GET         /patientlist                controllers.Application.patientlist()
 GET         /nursepatientdetails        controllers.Application.nursepatientdetails()
 POST        /login                      controllers.Application.login()
-GET         /patient                    controllers.Application.patient()
 GET         /mobile/allPatients         controllers.Mobile.fetchAllPatients()
 GET         /mobile/allBeds             controllers.Mobile.fetchAllBeds()
 GET         /mobile/allWards            controllers.Mobile.fetchAllWards()
