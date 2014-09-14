@@ -1,6 +1,5 @@
 package com.medmanagerui;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
@@ -9,20 +8,21 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import com.medmanagerui.models.DataProvider;
+import com.medmanagerui.models.Patient;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class InfoPatientFragment extends Fragment {
 
     private Button btnAllergies;
-    private EditText result;
+    private EditText allergiesEditText;
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -31,6 +31,7 @@ public class InfoPatientFragment extends Fragment {
      * number.
      */
     private Context ctx;
+    static Patient patient;
 
     public static InfoPatientFragment newInstance(Context context) {
         InfoPatientFragment fragment = new InfoPatientFragment();
@@ -51,7 +52,8 @@ public class InfoPatientFragment extends Fragment {
 
 
         btnAllergies = (Button) rootView.findViewById(R.id.buttonAllergies);
-        result = (EditText) rootView.findViewById(R.id.editTextDialogUserInput);
+        allergiesEditText = (EditText) rootView.findViewById(R.id.patientAllergies);
+        allergiesEditText.setText(patient.getAllergies());
 
         btnAllergies.setOnClickListener(new View.OnClickListener() {
 
@@ -69,17 +71,30 @@ public class InfoPatientFragment extends Fragment {
                 final EditText userInput = (EditText) promtsView.findViewById(R.id.editTextDialogUserInput);
 
                 alertDialogBuilder.setCancelable(false)
-                        .setPositiveButton("OK",
+                        .setPositiveButton("Save",
                                 new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog,int id) {
-                                        // get user input and set it to result
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        // get user input and set it to allergiesEditText
                                         // edit text
-                                        result.setText(userInput.getText());
+                                        allergiesEditText.setText(userInput.getText());
+                                        patient.setAllergies(allergiesEditText.getText().toString());
+                                        patient.save(new Callback() {
+                                            @Override
+                                            public void success(Object o, Response response) {
+
+                                            }
+
+                                            @Override
+                                            public void failure(RetrofitError error) {
+
+                                            }
+                                        });
+
                                     }
                                 })
                         .setNegativeButton("Cancel",
                                 new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog,int id) {
+                                    public void onClick(DialogInterface dialog, int id) {
                                         dialog.cancel();
                                     }
                                 });
