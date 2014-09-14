@@ -25,9 +25,14 @@ import com.medmanagerui.adapters.GridViewAdapter;
 import com.medmanagerui.models.Bed;
 import com.medmanagerui.models.DataProvider;
 import com.medmanagerui.models.Patient;
+import com.medmanagerui.models.Staff;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class BedViewFragment extends Fragment {
@@ -69,7 +74,7 @@ public class BedViewFragment extends Fragment {
 
         gridview.setAdapter(new GridViewAdapter(ctx));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View v, final int position, long id) {
        //         Toast.makeText(ctx, "" + position, Toast.LENGTH_SHORT).show();
 
 
@@ -100,19 +105,48 @@ public class BedViewFragment extends Fragment {
 
                 final Spinner doctorSpinner = (Spinner) promtsView.findViewById(R.id.spinnerDoctor);
 
+                ArrayList<String> docspinnerArray = new ArrayList<String>();
+                //     List<Patient> myList = new ArrayList<Patient>();
+                final ArrayList<Staff> docnameArray = new ArrayList<Staff>();
+                if(DataProvider.staffList!=null) {
+                    for (int i = 0; i < DataProvider.staffList.size(); i++) {
+                        if ( DataProvider.staffList.get(i).isDoctor) {
+                            docspinnerArray.add(DataProvider.staffList.get(i).name);
+                            docnameArray.add(DataProvider.staffList.get(i));
+                        }
+                    }
+                }
+                //*populate spinner
+                ArrayAdapter<String> docspinnerArrayAdapter = new ArrayAdapter<String>(ctx,android.R.layout.simple_spinner_dropdown_item,spinnerArray); //selected item will look like a spinner set from XML
+                docspinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                doctorSpinner.setAdapter(docspinnerArrayAdapter);
+
 
                 bed =new Bed();
                 patient = new Patient();
 //                patient.setName(patientSpinner.getSelectedItem().toString());
-                patient.setBed(position);
+
               //  patient.setDoctorId(doctorSpinner.getSelectedItem().toString());
                 alertDialogBuilder.setCancelable(false)
                         .setTitle("Patient Check-In")
-                        .setPositiveButton("OK",
+                        .setPositiveButton("Save",
                                 new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog,int id) {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        patient.setBed(position);
+                                        patient.setDoctor(docnameArray.get(position).id);
 
-                                dialog.dismiss();
+                                        patient.save(new Callback() {
+                                            @Override
+                                            public void success(Object o, Response response) {
+                                                Toast.makeText(ctx, "Success", Toast.LENGTH_SHORT).show();
+                                            }
+
+                                            @Override
+                                            public void failure(RetrofitError error) {
+                                                Toast.makeText(ctx, "Failure", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                                        dialog.dismiss();
 
                                     }
                                 })

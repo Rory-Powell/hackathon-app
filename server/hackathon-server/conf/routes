@@ -4,7 +4,7 @@
 
 # Home page
 GET         /                           controllers.Application.index()
-GET         /nurse                      controllers.Application.nurse()
+GET         /patientlist                controllers.Application.patientlist()
 GET         /nursepatientdetails        controllers.Application.nursepatientdetails()
 POST        /login                      controllers.Application.login()
 GET         /patient                    controllers.Application.patient()
