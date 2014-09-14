@@ -5,6 +5,7 @@ $(document).ready(function(){
     $('#app-row').fadeIn(2000);
     $('#details-row').fadeIn(2000);
     $('.navbar-default').fadeIn(2000);
+    $(".table").hide();
 
 });
 
@@ -49,8 +50,19 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $(".ward").click(function () {
+        $('#table-bordered').append('<tr><td>my data</td><td>more data</td></tr>');
+
+    });
+});
+
+
+
 $(document).ready(function(){
     $(".bed li").hide();
+    $('.gallery').show();
+
     $(".wards").click(function(){
         $(".wards li").each(function() {
             $(this).fadeIn(1000);
@@ -63,3 +75,33 @@ $(document).ready(function(){
     });
 });
 
+
+<<<<<<< HEAD
+=======
+$(document).ready(function() {
+    $(".clickable").click(function () {
+        $('.gallery').fadeOut(1000);
+        $('.table').fadeIn(1000);
+    });
+});
+
+$(document).ready(function(){
+    $(".wards li").hide();
+    $(".wards").click(function(){
+        $('.table').fadeOut(1000);
+        $('.gallery').fadeIn(1000);
+    });
+});
+function loadBed(id) {
+    var filter = [];
+    $.get("/mobile/allBeds", function (data) {
+        data.forEach(function (item) {
+            if (item.id == id) {
+                filter.push(item);
+            }
+            console.log(filter.length);
+        });
+    });
+}
+
+>>>>>>> d0f205023c42b1dc7ec87e0ba8d1d650f0cdea8c
