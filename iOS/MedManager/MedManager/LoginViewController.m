@@ -21,6 +21,7 @@
     [super viewDidLoad];
     [self setUpUI];
     self.title = @"Login";
+    [self.passwordField setSecureTextEntry:YES];
     [self.loginButton addTarget:self action:@selector(loginUser) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.hidesBackButton = YES;
 

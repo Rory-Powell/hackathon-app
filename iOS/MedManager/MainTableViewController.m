@@ -76,9 +76,14 @@
     if(occupied){
         cell.detailTextLabel.text = @"Occupied";
         cell.detailTextLabel.textColor = [UIColor colorWithRed:231.0f/255.0f green:76.0f/255.0f  blue:60.0f/255.0f  alpha:1.0];
+        cell.detailTextLabel.textAlignment = NSTextAlignmentRight;
+
 
     } else {
         cell.detailTextLabel.text = @"Empty";
+        cell.detailTextLabel.textAlignment = NSTextAlignmentRight;
+        cell.detailTextLabel.textColor = [UIColor colorWithRed:243.0f/255.0f green:156.0f/255.0f  blue:18.0f/255.0f  alpha:1.0];
+
     }
     return cell;
 }

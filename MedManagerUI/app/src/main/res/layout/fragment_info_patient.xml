@@ -289,7 +289,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/patientDoctor"
+            android:id="@+id/patientGP"
             android:text="@string/patientDoctorData"
             android:enabled="false"
             android:paddingLeft="15dp"

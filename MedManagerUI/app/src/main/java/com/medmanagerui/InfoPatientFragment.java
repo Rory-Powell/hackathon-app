@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.medmanagerui.models.DataProvider;
 import com.medmanagerui.models.Patient;
 
+import java.text.SimpleDateFormat;
+
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -77,7 +79,14 @@ public class InfoPatientFragment extends Fragment {
 
         alimentEditText = (EditText) rootView.findViewById(R.id.patientAliment);
         alimentEditText.setText(patient.getAilment());
-
+        EditText address = (EditText) rootView.findViewById(R.id.patientAddress);
+        address.setText(patient.getAddress());
+        EditText dateOfBirthField = (EditText) rootView.findViewById(R.id.patientDOB);
+        String formattedDOB = new SimpleDateFormat("dd-MM-yyyy").format(patient.getDob().getTime());
+        dateOfBirthField.setText(formattedDOB);
+        EditText gpField = (EditText) rootView.findViewById(R.id.patientGP);
+        gpField.setText(patient.getGp());
+        address.setText(patient.getAddress());
 
         btnAllergies.setOnClickListener(new View.OnClickListener() {
             @Override
