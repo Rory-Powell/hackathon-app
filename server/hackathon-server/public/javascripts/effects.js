@@ -81,6 +81,7 @@ $(document).ready(function() {
 
         $('.gallery').fadeOut(1000);
         $('.table').fadeIn(1000);
+        $(this).load("../views/patientlist.scala.html");
     });
 });
 

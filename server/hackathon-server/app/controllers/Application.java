@@ -24,14 +24,6 @@ public class Application extends Controller {
 
     }
 
-    public static Result patientlist() {
-        List<Ward> wards = Ward.find.all();
-        List<Bed> beds = Bed.find.all();
-        List<Patient> patients = Patient.find.all();
-        return ok(patientlist.render(wards, beds, patients));
-
-    }
-
     public static Result login() {
 
         /** Bind the request data to a form. **/
@@ -58,7 +50,6 @@ public class Application extends Controller {
             /** TODO redirect to appropriate doctor or nurse screen **/
             return redirect(
                     controllers.routes.Application.nursepatientdetails()
-
             );
         } else {
             flash("error", "Login details are not correct.");
@@ -68,14 +59,11 @@ public class Application extends Controller {
     public static Result nursepatientdetails() {
         List<Bed> beds = Bed.find.all();
         List<Ward> wards = Ward.find.all();
+        List<Patient> patients = Patient.find.all();
 
-        return ok(nursepatientdetails.render(wards, beds));
-    }
+        return ok(nursepatientdetails.render(wards, beds, patients));
 
-    public static Result patient() {
-        List<Bed> beds = Bed.find.all();
-        List<Ward> wards = Ward.find.all();
-        return ok(patient.render(wards, beds));
+
     }
 
 }
