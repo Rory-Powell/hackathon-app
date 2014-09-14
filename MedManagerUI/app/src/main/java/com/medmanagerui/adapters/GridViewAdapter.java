@@ -8,6 +8,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.medmanagerui.R;
+import com.medmanagerui.models.DataProvider;
 
 
 public class GridViewAdapter extends BaseAdapter {
@@ -36,13 +37,19 @@ public class GridViewAdapter extends BaseAdapter {
             imageView = new ImageView(mContext);
             imageView.setLayoutParams(new GridView.LayoutParams(190, 190));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setBackgroundResource(R.drawable.img_border);
+            imageView.setBackgroundResource(R.drawable.green_border);
+
+
             imageView.setPadding(8, 8, 8, 8);
         } else {
             imageView = (ImageView) convertView;
         }
 
         imageView.setImageResource(mThumbIds[position]);
+
+
+
+
         return imageView;
     }
 
