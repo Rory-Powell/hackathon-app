@@ -122,8 +122,13 @@ public class Patient {
         this.notes = notes;
     }
 
-    public int getBed() {
-        return bed;
+    public Bed getBed() {
+        for(Bed bed : DataProvider.bedList) {
+            if(bed.id.equals(String.valueOf(this.bed))){
+                return bed;
+            }
+        }
+        return null;
     }
 
     public void setBed(int bed) {
