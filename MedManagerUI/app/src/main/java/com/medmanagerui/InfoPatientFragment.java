@@ -244,7 +244,7 @@ public class InfoPatientFragment extends Fragment {
                                         // get user input and set it to allergiesEditText
                                         // edit text
                                         alimentEditText.setText(userInput.getText()); //NEEDS CHANEGD
-                                        patient.setAllergies(alimentEditText.getText().toString()); //CHECK WITH GLENN
+                                        patient.setAilment(alimentEditText.getText().toString()); //CHECK WITH GLENN
                                         patient.save(new Callback() {
                                             @Override
                                             public void success(Object o, Response response) {
