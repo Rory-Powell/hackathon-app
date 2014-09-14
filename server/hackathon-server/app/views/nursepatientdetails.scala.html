@@ -36,11 +36,11 @@
                                                 <ul class="beds">
                                                 @for(bed <- beds) {
                                                     @if(bed.ward.id == ward.id){
-<<<<<<< HEAD
-                                                        <li class="bed" onclick="loadBed(@bed.ward.id)">Bed @bed.id
-=======
-                                                        <li class="bed">Bed @bed.id
->>>>>>> 53c3b6b13bcdea2f467528f13cf8988424761d13
+
+                                                        <li class="bed" onclick="loadBed(@bed.ward.id)">
+
+                                                        Bed @bed.id
+
                                                         </li>
                                                     }
                                                 }
@@ -69,6 +69,7 @@
                                                 @if(bed.ward.id == ward.id){
                                                     <li class="gallery">
                                                         <p> @bed.id </p>
+
                                                         <img class="clickable"src="@routes.Assets.at("images/bed1.png")" style="width:112;height:=112">
 
 

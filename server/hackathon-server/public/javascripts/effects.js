@@ -76,10 +76,9 @@ $(document).ready(function(){
 });
 
 
-<<<<<<< HEAD
-=======
 $(document).ready(function() {
     $(".clickable").click(function () {
+
         $('.gallery').fadeOut(1000);
         $('.table').fadeIn(1000);
     });
@@ -90,8 +89,10 @@ $(document).ready(function(){
     $(".wards").click(function(){
         $('.table').fadeOut(1000);
         $('.gallery').fadeIn(1000);
+
     });
 });
+
 function loadBed(id) {
     var filter = [];
     $.get("/mobile/allBeds", function (data) {
@@ -104,4 +105,3 @@ function loadBed(id) {
     });
 }
 
->>>>>>> d0f205023c42b1dc7ec87e0ba8d1d650f0cdea8c
