@@ -30,6 +30,7 @@ create table patient (
 create table staff (
   id                        varchar(255) not null,
   password                  varchar(255),
+  name                      varchar(255),
   is_doctor                 boolean,
   constraint pk_staff primary key (id))
 ;
