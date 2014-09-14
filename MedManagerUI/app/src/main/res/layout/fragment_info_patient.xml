@@ -111,11 +111,12 @@
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="Edit"
                 android:id="@+id/buttonAllergies"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <TextView
@@ -144,11 +145,12 @@
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="Edit"
                 android:id="@+id/buttonMedication"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <TextView
@@ -177,11 +179,12 @@
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="Edit"
                 android:id="@+id/buttonVaccinations"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <TextView
@@ -210,11 +213,12 @@
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="Edit"
                 android:id="@+id/buttonAliment"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
+                android:layout_marginRight="15dp"
+                android:textSize="12dp" />
         </LinearLayout>
 
         <TextView
