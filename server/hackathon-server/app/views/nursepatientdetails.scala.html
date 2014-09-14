@@ -38,8 +38,8 @@
                                                 <li class="ward"> @ward.name
                                                 <ul class="beds">
                                                 @for(bed <- beds) {
-                                                    @if(bed.id == ward.id){
-                                                        <li class="bed">Bed @bed.id
+                                                    @if(bed.ward.id == ward.id){
+                                                        <li class="bed" onclick="loadBed(@bed.ward.id)">Bed @bed.id
                                                         </li>
                                                     }
                                                 }

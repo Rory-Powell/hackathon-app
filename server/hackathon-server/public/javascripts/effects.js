@@ -81,5 +81,15 @@ $(document).ready(function(){
         $('.gallery').fadeIn(1000);
     });
 });
-
+function loadBed(id) {
+    var filter = [];
+    $.get("/mobile/allBeds", function (data) {
+        data.forEach(function (item) {
+            if (item.id == id) {
+                filter.push(item);
+            }
+            console.log(filter.length);
+        });
+    });
+}
 
