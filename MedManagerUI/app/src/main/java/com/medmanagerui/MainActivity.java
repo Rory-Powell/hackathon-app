@@ -55,19 +55,6 @@ public class MainActivity extends Activity
             public void success(List<Patient> patients, Response response) {
                 DataProvider.patientList = patients;
                 dialog.hide();
-                Patient patient = patients.get(0);
-                patient.setName("Glenn");
-                patient.save(new Callback() {
-                    @Override
-                    public void success(Object o, Response response) {
-                        //Handle Success
-                    }
-
-                    @Override
-                    public void failure(RetrofitError error) {
-                        //Handle Error
-                    }
-                });
             }
 
             @Override
