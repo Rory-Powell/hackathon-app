@@ -77,6 +77,7 @@ public class InfoPatientFragment extends Fragment {
         alimentEditText = (EditText) rootView.findViewById(R.id.patientAliment);
         alimentEditText.setText(patient.getAllergies());
 
+
         btnAllergies.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,12 +102,12 @@ public class InfoPatientFragment extends Fragment {
                                         patient.save(new Callback() {
                                             @Override
                                             public void success(Object o, Response response) {
-
+                                                Toast.makeText(ctx, "Success", Toast.LENGTH_SHORT).show();
                                             }
 
                                             @Override
                                             public void failure(RetrofitError error) {
-
+                                                Toast.makeText(ctx, "Failure", Toast.LENGTH_SHORT).show();
                                             }
                                         });
 
@@ -252,7 +253,7 @@ public class InfoPatientFragment extends Fragment {
 
                                             @Override
                                             public void failure(RetrofitError error) {
-
+                                                Toast.makeText(ctx, "Failure", Toast.LENGTH_SHORT).show();
                                             }
                                         }); //NEEDS CHANGED
 
