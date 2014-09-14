@@ -36,27 +36,23 @@ public class ListViewAdapter extends BaseAdapter
     }
 
     public int getCount() {
-
-        //return patients.size();
-        //return DataProvider.patientList.size();
-
-        return 8;
+        return DataProvider.patientList.size();
     }
 
     public Object getItem(int position) {
 
-        //return patients.get(position);
         return patients.get(position);
     }
 
     public long getItemId(int position) {
-
         //return patients.get(position)
-        return Long.getLong(patients.get(position).getId());
+        String ID = patients.get(position).getId();
+        Long id = Long.getLong(ID);
+        return id;
     }
 
     // create a new View for each item referenced by the Adapter
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
          if(convertView==null){
                 // inflate the layout
@@ -79,7 +75,8 @@ public class ListViewAdapter extends BaseAdapter
                     public void onClick(View view)
                     {
 
-                        InfoPatientFragment.
+                        InfoPatientFragment.patient = patients.get(position);
+
                         mFrag.beginTransaction()
                                 .replace(R.id.container, InfoPatientFragment.newInstance(mContext))
                                 .commit();

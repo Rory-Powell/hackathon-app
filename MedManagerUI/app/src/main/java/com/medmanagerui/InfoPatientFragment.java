@@ -40,7 +40,7 @@ public class InfoPatientFragment extends Fragment {
      * number.
      */
     private Context ctx;
-    static Patient patient;
+    public static Patient patient;
 
     public static InfoPatientFragment newInstance(Context context) {
         InfoPatientFragment fragment = new InfoPatientFragment();
