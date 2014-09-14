@@ -18,7 +18,7 @@ public class Patient {
 
     private String gp;
 
-    private String doctor;
+    private Staff doctor;
 
     private String previousDoctor;
 
@@ -32,7 +32,7 @@ public class Patient {
 
     private String medication;
 
-    private int bed;
+    private Bed bed;
 
     public String getId() {
         return id;
@@ -94,8 +94,8 @@ public class Patient {
         return null;
     }
 
-    public void setDoctor(String docId) {
-        this.doctor = docId;
+    public void setDoctor(String previousDocId) {
+       // this.doctor = previousDocId;
     }
 
     public String getAilment() {
@@ -123,16 +123,17 @@ public class Patient {
     }
 
     public Bed getBed() {
-        for(Bed bed : DataProvider.bedList) {
-            if(bed.id.equals(String.valueOf(this.bed))){
-                return bed;
-            }
-        }
-        return null;
+         for(Bed bed : DataProvider.bedList) {
+             if(bed.id.equals(String.valueOf(this.bed))){
+                 return bed;
+                 }
+             }
+         return null;
     }
 
+
     public void setBed(int bed) {
-        this.bed = bed;
+       // this.bed = bed;
     }
     public void save(Callback cb) {
         new NetworkingService().savePatient(this, cb);
