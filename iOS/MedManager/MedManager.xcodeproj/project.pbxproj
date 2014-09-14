@@ -28,9 +28,8 @@
 		AE6C7C1419C52ECA00EB18E0 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C7C0B19C52ECA00EB18E0 /* AFURLSessionManager.m */; };
 		AE6C7C1A19C52F2A00EB18E0 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE6C7C1719C52F2A00EB18E0 /* SVProgressHUD.bundle */; };
 		AE6C7C1B19C52F2A00EB18E0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C7C1919C52F2A00EB18E0 /* SVProgressHUD.m */; };
-		AE6C7C1F19C539DA00EB18E0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C7C1D19C539DA00EB18E0 /* MainViewController.m */; };
-		AE6C7C2019C539DA00EB18E0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6C7C1E19C539DA00EB18E0 /* MainViewController.xib */; };
 		AE6C7C2219C5406700EB18E0 /* bed.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6C7C2119C5406700EB18E0 /* bed.png */; };
+		AE6C7C2519C549E800EB18E0 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C7C2419C549E800EB18E0 /* MainTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,10 +83,9 @@
 		AE6C7C1719C52F2A00EB18E0 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		AE6C7C1819C52F2A00EB18E0 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		AE6C7C1919C52F2A00EB18E0 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		AE6C7C1C19C539DA00EB18E0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		AE6C7C1D19C539DA00EB18E0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		AE6C7C1E19C539DA00EB18E0 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		AE6C7C2119C5406700EB18E0 /* bed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bed.png; sourceTree = "<group>"; };
+		AE6C7C2319C549E800EB18E0 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		AE6C7C2419C549E800EB18E0 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +109,8 @@
 		AE6C7BC019C52D5E00EB18E0 = {
 			isa = PBXGroup;
 			children = (
+				AE6C7C2319C549E800EB18E0 /* MainTableViewController.h */,
+				AE6C7C2419C549E800EB18E0 /* MainTableViewController.m */,
 				AE6C7BCB19C52D5E00EB18E0 /* MedManager */,
 				AE6C7BE219C52D5F00EB18E0 /* MedManagerTests */,
 				AE6C7BCA19C52D5E00EB18E0 /* Products */,
@@ -137,9 +137,6 @@
 				AE6C7BEF19C52D7400EB18E0 /* LoginViewController.h */,
 				AE6C7BF019C52D7400EB18E0 /* LoginViewController.m */,
 				AE6C7BF119C52D7400EB18E0 /* LoginViewController.xib */,
-				AE6C7C1C19C539DA00EB18E0 /* MainViewController.h */,
-				AE6C7C1D19C539DA00EB18E0 /* MainViewController.m */,
-				AE6C7C1E19C539DA00EB18E0 /* MainViewController.xib */,
 				AE6C7BD119C52D5E00EB18E0 /* AppDelegate.m */,
 				AE6C7BD319C52D5E00EB18E0 /* ViewController.h */,
 				AE6C7BD419C52D5E00EB18E0 /* ViewController.m */,
@@ -300,7 +297,6 @@
 				AE6C7BDA19C52D5E00EB18E0 /* Images.xcassets in Resources */,
 				AE6C7BF619C52E0800EB18E0 /* OpenSans-Light.ttf in Resources */,
 				AE6C7C2219C5406700EB18E0 /* bed.png in Resources */,
-				AE6C7C2019C539DA00EB18E0 /* MainViewController.xib in Resources */,
 				AE6C7BF319C52D7400EB18E0 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,12 +323,12 @@
 				AE6C7C1119C52ECA00EB18E0 /* AFURLConnectionOperation.m in Sources */,
 				AE6C7C0C19C52ECA00EB18E0 /* AFHTTPRequestOperation.m in Sources */,
 				AE6C7BD219C52D5E00EB18E0 /* AppDelegate.m in Sources */,
+				AE6C7C2519C549E800EB18E0 /* MainTableViewController.m in Sources */,
 				AE6C7C1219C52ECA00EB18E0 /* AFURLRequestSerialization.m in Sources */,
 				AE6C7C0E19C52ECA00EB18E0 /* AFHTTPSessionManager.m in Sources */,
 				AE6C7C0F19C52ECA00EB18E0 /* AFNetworkReachabilityManager.m in Sources */,
 				AE6C7C1319C52ECA00EB18E0 /* AFURLResponseSerialization.m in Sources */,
 				AE6C7C1419C52ECA00EB18E0 /* AFURLSessionManager.m in Sources */,
-				AE6C7C1F19C539DA00EB18E0 /* MainViewController.m in Sources */,
 				AE6C7BCF19C52D5E00EB18E0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

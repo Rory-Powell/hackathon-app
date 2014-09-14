@@ -16,8 +16,10 @@ package com.medmanagerui;
         import android.widget.TextView;
         import android.widget.Toast;
 
+        import com.medmanagerui.models.Bed;
         import com.medmanagerui.models.DataProvider;
         import com.medmanagerui.models.Patient;
+        import com.medmanagerui.models.Staff;
         import com.medmanagerui.models.Ward;
         import com.medmanagerui.networking.NetworkingService;
 
@@ -69,6 +71,30 @@ public class LoginActivity extends Activity {
             @Override
             public void success(List<Ward> wards, Response response) {
                 DataProvider.wardList = wards;
+                dialog.hide();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                dialog.hide();
+            }
+        });
+        new NetworkingService().allBeds(new Callback<List<Bed>>() {
+            @Override
+            public void success(List<Bed> beds, Response response) {
+                DataProvider.bedList = beds;
+                dialog.hide();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                dialog.hide();
+            }
+        });
+        new NetworkingService().allStaff(new Callback<List<Staff>>() {
+            @Override
+            public void success(List<Staff> staff, Response response) {
+                DataProvider.staffList = staff;
                 dialog.hide();
             }
 

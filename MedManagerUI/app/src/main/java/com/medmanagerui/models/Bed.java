@@ -11,4 +11,8 @@ public class Bed {
 
     public boolean isOccupied;
 
+    public String getWardName() {
+        return this.ward.name;
+    }
+
 }

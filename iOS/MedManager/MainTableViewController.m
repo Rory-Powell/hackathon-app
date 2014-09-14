@@ -7,22 +7,44 @@
 //
 
 #import "MainTableViewController.h"
-
+#import "SVProgressHUD.h"
+#import "AFHTTPRequestOperationManager.h"
 @interface MainTableViewController ()
-
+@property (nonatomic, retain) NSMutableArray *beds;
 @end
 
 @implementation MainTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
+    self.title = @"Overview";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self fetchBedData];
+    // Do any additional setup after loading the view from its nib.
 }
+
+-(void) fetchBedData {
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    
+    /** Set the request url and request body **/
+    [manager GET:@"http://10.10.10.177:9000/mobile/allBeds" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if([responseObject valueForKey:@"success"]) {
+            self.beds = responseObject;
+            [self.tableView reloadData];
+ 
+        }
+        [SVProgressHUD dismiss];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        [SVProgressHUD dismiss];
+        
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -34,24 +56,24 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.beds count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    cell.textLabel.text = [self.beds objectAtIndex:indexPath.row] objectForKey:<#(id)#>;
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
