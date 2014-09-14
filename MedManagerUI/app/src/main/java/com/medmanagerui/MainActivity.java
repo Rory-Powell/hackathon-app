@@ -51,33 +51,6 @@ public class MainActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        final ProgressDialog dialog = ProgressDialog.show(this, "",
-                "Loading. Please wait...", true);
-        new NetworkingService().allPatients(new Callback<List<Patient>>() {
-            @Override
-            public void success(List<Patient> patients, Response response) {
-                DataProvider.patientList = patients;
-                dialog.hide();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                dialog.hide();
-            }
-        });
-
-        new NetworkingService().allWards(new Callback<List<Ward>>() {
-            @Override
-            public void success(List<Ward> wards, Response response) {
-                DataProvider.wardList = wards;
-                dialog.hide();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                dialog.hide();
-            }
-        });
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ctx=this;
@@ -96,15 +69,15 @@ public class MainActivity extends Activity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         switch (position){
-        case 0:
+        case 1:
         fragmentManager.beginTransaction()
                 .replace(R.id.container, InfoPatientFragment.newInstance(ctx))
                 .commit();
         break;
 
-        case 1:
+        case 0:
         fragmentManager.beginTransaction()
-        .replace(R.id.container, DoctorMainViewFragment.newInstance(ctx))
+        .replace(R.id.container, DoctorMainViewFragment.newInstance(ctx, fragmentManager))
         .commit();
         break;
 
@@ -163,45 +136,4 @@ public class MainActivity extends Activity
         }
         return super.onOptionsItemSelected(item);
     }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
-
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-            ((MainActivity) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
-        }
-    }
-
 }
