@@ -23,10 +23,10 @@ public class Patient extends Model {
     public String gp;
 
     @ManyToOne(cascade= CascadeType.ALL)
-    public String doctorId;
+    public Staff doctor;
 
     @OneToOne(cascade= CascadeType.ALL)
-    public String previousDocId;
+    public Staff previousDoctor;
 
     public String ailment;
 
