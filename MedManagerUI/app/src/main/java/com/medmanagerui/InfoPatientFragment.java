@@ -22,6 +22,8 @@ import android.widget.Toast;
 public class InfoPatientFragment extends Fragment {
 
     private Button btnAllergies;
+    private EditText result;
+
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     /**
@@ -49,19 +51,51 @@ public class InfoPatientFragment extends Fragment {
 
 
         btnAllergies = (Button) rootView.findViewById(R.id.buttonAllergies);
+        result = (EditText) rootView.findViewById(R.id.editTextDialogUserInput);
+
         btnAllergies.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
-                AlertDialog alertDialog = new AlertDialog.Builder(ctx).create(); //Read Update
-                alertDialog.setTitle("Test Title");
-                alertDialog.setMessage("this is my app");
 
-                alertDialog.setButton("Continue..", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
+                LayoutInflater li = LayoutInflater.from(ctx);
+                View promtsView = li.inflate(R.layout.prompts, null);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ctx);
+
+                alertDialogBuilder.setView(promtsView);
+
+                final EditText userInput = (EditText) promtsView.findViewById(R.id.editTextDialogUserInput);
+
+                alertDialogBuilder.setCancelable(false)
+                        .setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        // get user input and set it to result
+                                        // edit text
+                                        result.setText(userInput.getText());
+                                    }
+                                })
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+                //AlertDialog alertDialog = new AlertDialog.Builder(ctx).create(); //Read Update
+                //alertDialog.setTitle("Allergies");
+                //alertDialog.setMessage("Allergies Edit Window");
+
+
+                //alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE,"Okay", new DialogInterface.OnClickListener() {
+                    //public void onClick(DialogInterface dialog, int which) {
                         // here you can add functions
-                    }
-                });
+                   // }
+                //});
 
+                AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();  //<-- See This!
 
             }
