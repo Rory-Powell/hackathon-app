@@ -78,6 +78,22 @@ public class InfoPatientFragment extends Fragment {
         alimentEditText = (EditText) rootView.findViewById(R.id.patientAliment);
         alimentEditText.setText(patient.getAilment());
 
+        EditText patientEditTextWard = (EditText) rootView.findViewById(R.id.patientWard);
+        EditText patientEditTextBed = (EditText) rootView.findViewById(R.id.patientBed);
+
+        if (patient.getBed() != null)
+        {
+            patientEditTextBed.setText(patient.getBed().toString());
+            patientEditTextWard.setText(patient.getBed().getWardName());
+        }
+        else
+        {
+            patientEditTextBed.setText("N/A");
+            patientEditTextWard.setText("Unassigned");
+
+        }
+
+
 
         btnAllergies.setOnClickListener(new View.OnClickListener() {
             @Override
