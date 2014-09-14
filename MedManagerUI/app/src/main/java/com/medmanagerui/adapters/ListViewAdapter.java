@@ -79,6 +79,7 @@ public class ListViewAdapter extends BaseAdapter
                     public void onClick(View view)
                     {
 
+                        InfoPatientFragment.
                         mFrag.beginTransaction()
                                 .replace(R.id.container, InfoPatientFragment.newInstance(mContext))
                                 .commit();
