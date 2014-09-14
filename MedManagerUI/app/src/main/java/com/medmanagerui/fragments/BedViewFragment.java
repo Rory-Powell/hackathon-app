@@ -65,6 +65,8 @@ public class BedViewFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_bed_view, container, false);
 
+
+
         GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
         gridview.setAdapter(new GridViewAdapter(ctx));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -79,7 +81,7 @@ public class BedViewFragment extends Fragment {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ctx);
 
                 alertDialogBuilder.setView(promtsView);
-   // System.out.print("\n\nPatient Name: "+DataProvider.patientList.get(0).getName());
+
                 //Patient Spinner
                 final Spinner patientSpinner = (Spinner) promtsView.findViewById(R.id.spinnerPatient);
 
