@@ -29,7 +29,8 @@
 		AE6C7C1A19C52F2A00EB18E0 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE6C7C1719C52F2A00EB18E0 /* SVProgressHUD.bundle */; };
 		AE6C7C1B19C52F2A00EB18E0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C7C1919C52F2A00EB18E0 /* SVProgressHUD.m */; };
 		AE6C7C2219C5406700EB18E0 /* bed.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6C7C2119C5406700EB18E0 /* bed.png */; };
-		AE6C7C2519C549E800EB18E0 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C7C2419C549E800EB18E0 /* MainTableViewController.m */; };
+		AE6C7C2919C55FD300EB18E0 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C7C2719C55FD300EB18E0 /* MainTableViewController.m */; };
+		AE6C7C2A19C55FD300EB18E0 /* MainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6C7C2819C55FD300EB18E0 /* MainTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +85,9 @@
 		AE6C7C1819C52F2A00EB18E0 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		AE6C7C1919C52F2A00EB18E0 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		AE6C7C2119C5406700EB18E0 /* bed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bed.png; sourceTree = "<group>"; };
-		AE6C7C2319C549E800EB18E0 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
-		AE6C7C2419C549E800EB18E0 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		AE6C7C2619C55FD300EB18E0 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		AE6C7C2719C55FD300EB18E0 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		AE6C7C2819C55FD300EB18E0 /* MainTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +111,9 @@
 		AE6C7BC019C52D5E00EB18E0 = {
 			isa = PBXGroup;
 			children = (
-				AE6C7C2319C549E800EB18E0 /* MainTableViewController.h */,
-				AE6C7C2419C549E800EB18E0 /* MainTableViewController.m */,
+				AE6C7C2619C55FD300EB18E0 /* MainTableViewController.h */,
+				AE6C7C2719C55FD300EB18E0 /* MainTableViewController.m */,
+				AE6C7C2819C55FD300EB18E0 /* MainTableViewController.xib */,
 				AE6C7BCB19C52D5E00EB18E0 /* MedManager */,
 				AE6C7BE219C52D5F00EB18E0 /* MedManagerTests */,
 				AE6C7BCA19C52D5E00EB18E0 /* Products */,
@@ -291,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6C7C2A19C55FD300EB18E0 /* MainTableViewController.xib in Resources */,
 				AE6C7BF719C52E0800EB18E0 /* OpenSans-Regular.ttf in Resources */,
 				AE6C7C1A19C52F2A00EB18E0 /* SVProgressHUD.bundle in Resources */,
 				AE6C7BD819C52D5E00EB18E0 /* Main.storyboard in Resources */,
@@ -323,7 +327,7 @@
 				AE6C7C1119C52ECA00EB18E0 /* AFURLConnectionOperation.m in Sources */,
 				AE6C7C0C19C52ECA00EB18E0 /* AFHTTPRequestOperation.m in Sources */,
 				AE6C7BD219C52D5E00EB18E0 /* AppDelegate.m in Sources */,
-				AE6C7C2519C549E800EB18E0 /* MainTableViewController.m in Sources */,
+				AE6C7C2919C55FD300EB18E0 /* MainTableViewController.m in Sources */,
 				AE6C7C1219C52ECA00EB18E0 /* AFURLRequestSerialization.m in Sources */,
 				AE6C7C0E19C52ECA00EB18E0 /* AFHTTPSessionManager.m in Sources */,
 				AE6C7C0F19C52ECA00EB18E0 /* AFNetworkReachabilityManager.m in Sources */,
