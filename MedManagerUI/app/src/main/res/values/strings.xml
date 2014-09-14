@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MedManagerUI</string>
+    <string name="app_name">MedManager</string>
     <string name="title_Doctor">Doctor</string>
     <string name="title_Nurse">Nurse</string>
     <string name="title_TestInfo">testInfo</string>

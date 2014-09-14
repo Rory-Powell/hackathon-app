@@ -37,6 +37,7 @@ public class ListViewAdapter extends BaseAdapter
 
     public int getCount() {
         return DataProvider.patientList.size();
+        //return 5;
     }
 
     public Object getItem(int position) {
@@ -66,18 +67,20 @@ public class ListViewAdapter extends BaseAdapter
          // get the TextView and then set the text (item name) and tag (item ID) values
          //TextView textViewItem = (TextView) convertView.findViewById(R.id.name);
 
+        Patient thePatient = patients.get(position);
+
         TextView textViewName = (TextView) convertView.findViewById(R.id.patient_Name);
-        textViewName.setText(patients.get(position).getName());
+        textViewName.setText(thePatient.getName());
 
 //        TextView textViewWard = (TextView) convertView.findViewById(R.id.patient_Ward);
-//        textViewWard.setText(patients.get(position).getBed());
+//        textViewWard.setText(thePatient.getBed().getWardName());
 
 //        TextView textViewBed = (TextView) convertView.findViewById(R.id.patient_Bed);
-//        textViewBed.setText(patients.get(position).getBed());
+//        textViewBed.setText(patients.get(position).getBed().toString());
 
         ImageButton imageButton = (ImageButton) convertView.findViewById(R.id.imageButton);
 
-        imageButton.setImageResource(R.drawable.logo);
+        imageButton.setImageResource(R.drawable.logo2);
 
                 imageButton.setOnClickListener(new View.OnClickListener() {
                     @Override
