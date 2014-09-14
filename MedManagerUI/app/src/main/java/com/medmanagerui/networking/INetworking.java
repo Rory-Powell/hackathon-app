@@ -2,6 +2,7 @@ package com.medmanagerui.networking;
 
 import com.medmanagerui.models.Bed;
 import com.medmanagerui.models.Patient;
+import com.medmanagerui.models.Staff;
 import com.medmanagerui.models.Ward;
 
 import java.util.List;
@@ -26,6 +27,9 @@ public interface INetworking {
 
     @GET("/mobile/allBeds")
     void allBeds(retrofit.Callback<List<Bed>> cb);
+
+    @GET("/mobile/allStaff")
+    void allStaff(retrofit.Callback<List<Staff>> cb);
 
     @POST("/mobile/savePatient")
     void savePatient(@Body Patient user, retrofit.Callback<Patient> cb);

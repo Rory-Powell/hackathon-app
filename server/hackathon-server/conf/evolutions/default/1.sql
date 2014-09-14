@@ -19,6 +19,8 @@ create table patient (
   doctor_id                 varchar(255),
   previous_doctor_id        varchar(255),
   ailment                   varchar(255),
+  medication                varchar(255),
+  vaccinations              varchar(255),
   allergies                 varchar(255),
   notes                     varchar(255),
   bed_id                    varchar(255),

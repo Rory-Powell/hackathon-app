@@ -30,6 +30,10 @@ public class Patient extends Model {
 
     public String ailment;
 
+    public String medication;
+
+    public String vaccinations;
+
     public String allergies;
 
     public String notes;

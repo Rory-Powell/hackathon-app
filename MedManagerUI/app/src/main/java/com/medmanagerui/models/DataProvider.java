@@ -13,5 +13,7 @@ public class DataProvider {
 
     public static List<Bed> bedList;
 
+    public static List<Staff> staffList;
+
 
 }

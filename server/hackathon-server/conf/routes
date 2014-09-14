@@ -10,7 +10,10 @@ POST        /login                      controllers.Application.login()
 GET         /mobile/allPatients         controllers.Mobile.fetchAllPatients()
 GET         /mobile/allBeds             controllers.Mobile.fetchAllBeds()
 GET         /mobile/allWards            controllers.Mobile.fetchAllWards()
+GET         /mobile/allStaff            controllers.Mobile.fetchAllStaff()
 POST        /mobile/savePatient         controllers.Mobile.savePatient()
+POST        /mobile/login               controllers.Mobile.login()
+
 
 
 

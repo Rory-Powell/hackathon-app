@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 
 import com.medmanagerui.models.Bed;
 import com.medmanagerui.models.Patient;
+import com.medmanagerui.models.Staff;
 import com.medmanagerui.models.Ward;
 
 import java.util.List;
@@ -41,6 +42,13 @@ public class NetworkingService implements INetworking{
 
         INetworking network = restAdapter.create(INetworking.class);
         network.allBeds(cb);
+    }
+
+    @Override
+    public void allStaff(retrofit.Callback<List<Staff>> cb) {
+
+        INetworking network = restAdapter.create(INetworking.class);
+        network.allStaff(cb);
     }
 
     @Override
