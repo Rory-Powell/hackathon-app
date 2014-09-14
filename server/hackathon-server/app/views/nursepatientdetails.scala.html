@@ -58,7 +58,7 @@
                                         <div class="gallery">@for(ward <- wards) {
                                             <ul class="gallery">
                                             @for(bed <- beds) {
-                                                @if(bed.id == ward.id){
+                                                @if(bed.ward.id == ward.id){
                                                     <li class="gallery">
                                                         <p> @bed.id </p>
                                                         <img src="@routes.Assets.at("images/bed1.png")" style="width:112;height:=112">
