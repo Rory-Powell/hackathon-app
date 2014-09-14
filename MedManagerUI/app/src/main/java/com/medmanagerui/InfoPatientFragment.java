@@ -53,10 +53,10 @@ public class InfoPatientFragment extends Fragment {
 
         btnAllergies = (Button) rootView.findViewById(R.id.buttonAllergies);
         allergiesEditText = (EditText) rootView.findViewById(R.id.patientAllergies);
-//        allergiesEditText.setText(patient.getAllergies());
+        allergiesEditText.setText(patient.getAllergies());
 
         btnAllergies.setOnClickListener(new View.OnClickListener() {
-            
+
 
             @Override
             public void onClick(View view) {
