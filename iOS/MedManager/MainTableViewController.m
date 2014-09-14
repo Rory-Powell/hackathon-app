@@ -72,11 +72,13 @@
     UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     NSDictionary * bedObject =[self.beds objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"Bed %@ - Ward %@", [bedObject valueForKey:@"id"], [[bedObject valueForKey:@"ward"] valueForKey:@"id"]];
-    BOOL occupied = [bedObject valueForKey:@"isOccupied"];
+    BOOL occupied = [[bedObject valueForKey:@"isOccupied"] boolValue];
     if(occupied){
-        cell.detailTextLabel.text = @"dsfdsf";
+        cell.detailTextLabel.text = @"Occupied";
+        cell.detailTextLabel.textColor = [UIColor colorWithRed:231.0f/255.0f green:76.0f/255.0f  blue:60.0f/255.0f  alpha:1.0];
+
     } else {
-        cell.detailTextLabel.text = @"Un";
+        cell.detailTextLabel.text = @"Empty";
     }
     return cell;
 }
