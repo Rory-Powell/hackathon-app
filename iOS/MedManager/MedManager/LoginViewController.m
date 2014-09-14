@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "MainViewController.h"
+#import "MainTableViewController.h"
 #import "SVProgressHUD.h"
 #import "AFNetworking.h"
 @interface LoginViewController ()
@@ -38,7 +38,7 @@
     [manager POST:@"http://10.10.10.177:9000/mobile/login" parameters:loginDetails success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if([responseObject valueForKey:@"success"]) {
-            MainViewController * mainVC = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+            MainTableViewController * mainVC = [[MainTableViewController alloc] initWithStyle:UITableViewStylePlain];
             [self.navigationController pushViewController:mainVC animated:YES];
         } else {
             

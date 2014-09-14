@@ -57,7 +57,7 @@ public class Application extends Controller {
             Controller.session("email", userID);
             /** TODO redirect to appropriate doctor or nurse screen **/
             return redirect(
-                    controllers.routes.Application.patientlist()
+                    controllers.routes.Application.nursepatientdetails()
 
             );
         } else {
