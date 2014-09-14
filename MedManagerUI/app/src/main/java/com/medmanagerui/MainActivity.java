@@ -16,11 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-
 import com.medmanagerui.fragments.BedViewFragment;
-
 import com.medmanagerui.fragments.DoctorMainViewFragment;
-
+import com.medmanagerui.models.Bed;
 import com.medmanagerui.models.DataProvider;
 import com.medmanagerui.models.Patient;
 import com.medmanagerui.models.Ward;
@@ -50,6 +48,47 @@ public class MainActivity extends Activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        final ProgressDialog dialog = ProgressDialog.show(this, "",
+                "Loading. Please wait...", true);
+        new NetworkingService().allPatients(new Callback<List<Patient>>() {
+            @Override
+            public void success(List<Patient> patients, Response response) {
+                DataProvider.patientList = patients;
+                dialog.hide();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                dialog.hide();
+            }
+        });
+
+        new NetworkingService().allWards(new Callback<List<Ward>>() {
+            @Override
+            public void success(List<Ward> wards, Response response) {
+                DataProvider.wardList = wards;
+                dialog.hide();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                dialog.hide();
+            }
+        });
+
+        new NetworkingService().allBeds(new Callback<List<Bed>>() {
+            @Override
+            public void success(List<Bed> beds, Response response) {
+                DataProvider.bedList = beds;
+                dialog.hide();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                dialog.hide();
+            }
+        });
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -116,7 +155,8 @@ public class MainActivity extends Activity
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
-            // if the drawer is not showing. Otherwise, let the drawer
+            // if the drawer
+            // is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
             getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();

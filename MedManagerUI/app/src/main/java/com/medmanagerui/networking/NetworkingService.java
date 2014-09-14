@@ -2,6 +2,7 @@ package com.medmanagerui.networking;
 
 import android.os.AsyncTask;
 
+import com.medmanagerui.models.Bed;
 import com.medmanagerui.models.Patient;
 import com.medmanagerui.models.Ward;
 
@@ -10,6 +11,7 @@ import java.util.concurrent.Callable;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
+import retrofit.http.Body;
 
 /**
  * Created by gsayers on 13/09/2014.
@@ -33,4 +35,18 @@ public class NetworkingService implements INetworking{
         INetworking network = restAdapter.create(INetworking.class);
         network.allWards(cb);
     }
+
+    @Override
+    public void allBeds(retrofit.Callback<List<Bed>> cb) {
+
+        INetworking network = restAdapter.create(INetworking.class);
+        network.allBeds(cb);
+    }
+
+    @Override
+    public void savePatient(@Body Patient user, retrofit.Callback<Patient> cb) {
+        INetworking network = restAdapter.create(INetworking.class);
+        network.savePatient(user, cb);
+    }
+
 }

@@ -17,7 +17,7 @@ create table patient (
   address                   varchar(255),
   gp                        varchar(255),
   doctor_id                 varchar(255),
-  previous_doc_id           varchar(255),
+  previous_doctor_id        varchar(255),
   ailment                   varchar(255),
   allergies                 varchar(255),
   notes                     varchar(255),
@@ -48,8 +48,12 @@ create sequence ward_seq;
 
 alter table bed add constraint fk_bed_ward_1 foreign key (ward_id) references ward (id);
 create index ix_bed_ward_1 on bed (ward_id);
-alter table patient add constraint fk_patient_bed_2 foreign key (bed_id) references bed (id);
-create index ix_patient_bed_2 on patient (bed_id);
+alter table patient add constraint fk_patient_doctor_2 foreign key (doctor_id) references staff (id);
+create index ix_patient_doctor_2 on patient (doctor_id);
+alter table patient add constraint fk_patient_previousDoctor_3 foreign key (previous_doctor_id) references staff (id);
+create index ix_patient_previousDoctor_3 on patient (previous_doctor_id);
+alter table patient add constraint fk_patient_bed_4 foreign key (bed_id) references bed (id);
+create index ix_patient_bed_4 on patient (bed_id);
 
 
 
