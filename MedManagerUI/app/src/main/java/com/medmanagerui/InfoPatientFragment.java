@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.medmanagerui.models.DataProvider;
 import com.medmanagerui.models.Patient;
@@ -22,7 +23,15 @@ import retrofit.client.Response;
 public class InfoPatientFragment extends Fragment {
 
     private Button btnAllergies;
+    private Button btnMedication;
+    private Button btnVaccinations;
+    private Button btnAliment;
+
+
     private EditText allergiesEditText;
+    private EditText medicationEditText;
+    private EditText vaccinationsEditText;
+    private EditText alimentEditText;
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -52,12 +61,24 @@ public class InfoPatientFragment extends Fragment {
 
 
         btnAllergies = (Button) rootView.findViewById(R.id.buttonAllergies);
+        btnMedication = (Button) rootView.findViewById(R.id.buttonMedication);
+        btnVaccinations = (Button) rootView.findViewById(R.id.buttonVaccinations);
+        btnAliment = (Button) rootView.findViewById(R.id.buttonAliment);
+
         allergiesEditText = (EditText) rootView.findViewById(R.id.patientAllergies);
         allergiesEditText.setText(patient.getAllergies());
 
+        medicationEditText = (EditText) rootView.findViewById(R.id.patientMedication);
+        medicationEditText.setText(patient.getAllergies());
+
+        vaccinationsEditText = (EditText) rootView.findViewById(R.id.patientVaccinations);
+        vaccinationsEditText.setText(patient.getAllergies());
+
+        alimentEditText = (EditText) rootView.findViewById(R.id.patientAliment);
+        alimentEditText.setText(patient.getAllergies());
+
+
         btnAllergies.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View view) {
 
@@ -81,12 +102,12 @@ public class InfoPatientFragment extends Fragment {
                                         patient.save(new Callback() {
                                             @Override
                                             public void success(Object o, Response response) {
-
+                                                Toast.makeText(ctx, "Success", Toast.LENGTH_SHORT).show();
                                             }
 
                                             @Override
                                             public void failure(RetrofitError error) {
-
+                                                Toast.makeText(ctx, "Failure", Toast.LENGTH_SHORT).show();
                                             }
                                         });
 
@@ -98,17 +119,154 @@ public class InfoPatientFragment extends Fragment {
                                         dialog.cancel();
                                     }
                                 });
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();  //<-- See This!
+            }
+        });
 
-                //AlertDialog alertDialog = new AlertDialog.Builder(ctx).create(); //Read Update
-                //alertDialog.setTitle("Allergies");
-                //alertDialog.setMessage("Allergies Edit Window");
+        btnMedication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                LayoutInflater li = LayoutInflater.from(ctx);
+                View promtsView = li.inflate(R.layout.prompts, null);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ctx);
+
+                alertDialogBuilder.setView(promtsView);
+
+                final EditText userInput = (EditText) promtsView.findViewById(R.id.editTextDialogUserInput);
+
+                alertDialogBuilder.setCancelable(false)
+                        .setPositiveButton("Save",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        // get user input and set it to allergiesEditText
+                                        // edit text
+                                        medicationEditText.setText(userInput.getText()); //NEEDS CHANEGD
+                                        patient.setAllergies(medicationEditText.getText().toString()); //CHECK WITH GLENN
+                                        patient.save(new Callback() {
+                                            @Override
+                                            public void success(Object o, Response response) {
+                                                Toast.makeText(ctx, "Success", Toast.LENGTH_SHORT).show();
+                                            }
+
+                                            @Override
+                                            public void failure(RetrofitError error) {
+                                                Toast.makeText(ctx, "Failure", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }); //NEEDS CHANGED
+
+                                    }
+                                })
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
 
 
-                //alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE,"Okay", new DialogInterface.OnClickListener() {
-                    //public void onClick(DialogInterface dialog, int which) {
-                        // here you can add functions
-                   // }
-                //});
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();  //<-- See This!
+
+            }
+        });
+
+        btnVaccinations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                LayoutInflater li = LayoutInflater.from(ctx);
+                View promtsView = li.inflate(R.layout.prompts, null);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ctx);
+
+                alertDialogBuilder.setView(promtsView);
+
+                final EditText userInput = (EditText) promtsView.findViewById(R.id.editTextDialogUserInput);
+
+                alertDialogBuilder.setCancelable(false)
+                        .setPositiveButton("Save",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        // get user input and set it to allergiesEditText
+                                        // edit text
+                                        vaccinationsEditText.setText(userInput.getText()); //NEEDS CHANEGD
+                                        patient.setAllergies(vaccinationsEditText.getText().toString()); //CHECK WITH GLENN
+                                        patient.save(new Callback() {
+                                            @Override
+                                            public void success(Object o, Response response) {
+                                                Toast.makeText(ctx, "Success", Toast.LENGTH_SHORT).show();
+                                            }
+
+                                            @Override
+                                            public void failure(RetrofitError error) {
+                                                Toast.makeText(ctx, "Failure", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }); //NEEDS CHANGED
+
+                                    }
+                                })
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();  //<-- See This!
+
+            }
+        });
+
+        btnAliment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                LayoutInflater li = LayoutInflater.from(ctx);
+                View promtsView = li.inflate(R.layout.prompts, null);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ctx);
+
+                alertDialogBuilder.setView(promtsView);
+
+                final EditText userInput = (EditText) promtsView.findViewById(R.id.editTextDialogUserInput);
+
+                alertDialogBuilder.setCancelable(false)
+                        .setPositiveButton("Save",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        // get user input and set it to allergiesEditText
+                                        // edit text
+                                        alimentEditText.setText(userInput.getText()); //NEEDS CHANEGD
+                                        patient.setAllergies(alimentEditText.getText().toString()); //CHECK WITH GLENN
+                                        patient.save(new Callback() {
+                                            @Override
+                                            public void success(Object o, Response response) {
+                                                Toast.makeText(ctx, "Success", Toast.LENGTH_SHORT).show();
+                                            }
+
+                                            @Override
+                                            public void failure(RetrofitError error) {
+                                                Toast.makeText(ctx, "Failure", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }); //NEEDS CHANGED
+
+                                    }
+                                })
+                        .setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+
 
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();  //<-- See This!
