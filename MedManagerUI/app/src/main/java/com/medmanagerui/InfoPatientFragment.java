@@ -144,7 +144,7 @@ public class InfoPatientFragment extends Fragment {
                                         // get user input and set it to allergiesEditText
                                         // edit text
                                         medicationEditText.setText(userInput.getText()); //NEEDS CHANEGD
-                                        patient.setAllergies(medicationEditText.getText().toString()); //CHECK WITH GLENN
+                                        patient.setMedication(medicationEditText.getText().toString()); //CHECK WITH GLENN
                                         patient.save(new Callback() {
                                             @Override
                                             public void success(Object o, Response response) {
@@ -194,7 +194,7 @@ public class InfoPatientFragment extends Fragment {
                                         // get user input and set it to allergiesEditText
                                         // edit text
                                         vaccinationsEditText.setText(userInput.getText()); //NEEDS CHANEGD
-                                        patient.setAllergies(vaccinationsEditText.getText().toString()); //CHECK WITH GLENN
+                                        patient.setVaccinations(vaccinationsEditText.getText().toString()); //CHECK WITH GLENN
                                         patient.save(new Callback() {
                                             @Override
                                             public void success(Object o, Response response) {
