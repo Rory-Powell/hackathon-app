@@ -94,8 +94,8 @@ public class Patient {
         return null;
     }
 
-    public void setDoctor(String previousDocId) {
-        this.doctor = previousDocId;
+    public void setDoctor(String docId) {
+        this.doctor = docId;
     }
 
     public String getAilment() {
