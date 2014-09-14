@@ -78,6 +78,7 @@ $(document).ready(function(){
 
 $(document).ready(function() {
     $(".clickable").click(function () {
+
         $('.gallery').fadeOut(1000);
         $('.table').fadeIn(1000);
     });
@@ -88,6 +89,7 @@ $(document).ready(function(){
     $(".wards").click(function(){
         $('.table').fadeOut(1000);
         $('.gallery').fadeIn(1000);
+
     });
 });
 
