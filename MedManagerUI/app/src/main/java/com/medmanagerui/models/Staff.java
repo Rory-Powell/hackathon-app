@@ -7,6 +7,8 @@ public class Staff {
 
     public String id;
 
+    public String name;
+
     public String password;
 
     public boolean isDoctor;
