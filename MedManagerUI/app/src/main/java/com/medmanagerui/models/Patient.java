@@ -95,7 +95,11 @@ public class Patient {
     }
 
     public void setDoctor(String previousDocId) {
-       // this.doctor = previousDocId;
+        for(Staff staff : DataProvider.staffList) {
+            if(staff.id.equals(String.valueOf(previousDocId))){
+                this.doctor = staff;
+            }
+        }
     }
 
     public String getAilment() {
@@ -133,7 +137,11 @@ public class Patient {
 
 
     public void setBed(int bed) {
-       // this.bed = bed;
+        for(Bed bd : DataProvider.bedList) {
+            if(bd.id.equals(String.valueOf(bed))){
+                this.bed = bd;
+            }
+        }
     }
     public void save(Callback cb) {
         new NetworkingService().savePatient(this, cb);
