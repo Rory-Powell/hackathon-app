@@ -49,6 +49,15 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $(".ward").click(function () {
+        $('#table-bordered').append('<tr><td>my data</td><td>more data</td></tr>');
+
+    });
+});
+
+
+
 $(document).ready(function(){
     $(".bed li").hide();
     $(".wards").click(function(){
@@ -62,4 +71,5 @@ $(document).ready(function(){
         });
     });
 });
+
 
