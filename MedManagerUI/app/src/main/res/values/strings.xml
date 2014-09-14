@@ -28,4 +28,14 @@
     <string name="patientAddressData">74 Example, Banbridge</string>
     <string name="patientDoctorData">Dr. Example</string>
 
+
+    <!--Login stuff-->
+    <string name="app_name2">LoginScreen</string>
+    <string name="action_settings2">Settings</string>
+    <string name="hello_world">Login Screen</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="Login">Login</string>
+    <string name="attempts">Attempts Left:</string>
+
 </resources>

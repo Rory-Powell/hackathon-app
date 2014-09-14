@@ -6,10 +6,10 @@
     android:columnWidth="90dp"
     android:numColumns="2"
     android:paddingTop="20dp"
-    android:paddingLeft="60dp"
+    android:paddingLeft="55dp"
     android:paddingRight="10dp"
     android:verticalSpacing="50dp"
     android:horizontalSpacing="50dp"
     android:stretchMode="none"
     android:gravity="center"
-    />
+    android:choiceMode="singleChoice" />

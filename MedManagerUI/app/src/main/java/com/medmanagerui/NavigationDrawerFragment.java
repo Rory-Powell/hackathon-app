@@ -76,7 +76,7 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         // Select either the default item (0) or the last selected item.
-        selectItem(mCurrentSelectedPosition);
+       //selectItem(mCurrentSelectedPosition);
     }
 
     @Override
@@ -104,7 +104,6 @@ public class NavigationDrawerFragment extends Fragment {
                 new String[]{
                         getString(R.string.title_Nurse),
                         getString(R.string.title_Doctor),
-                        getString(R.string.title_TestInfo),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;

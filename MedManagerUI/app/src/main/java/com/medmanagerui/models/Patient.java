@@ -28,6 +28,10 @@ public class Patient {
 
     private String notes;
 
+    private String vaccinations;
+
+    private String medication;
+
     private int bed;
 
     public String getId() {
@@ -81,8 +85,13 @@ public class Patient {
         this.previousDoctor = doctorId;
     }
 
-    public String getDoctor() {
-        return doctor;
+    public Staff getDoctor() {
+        for(Staff staff : DataProvider.staffList) {
+            if(staff.id.equals(String.valueOf(this.doctor))){
+                return staff;
+            }
+        }
+        return null;
     }
 
     public void setDoctor(String previousDocId) {
@@ -113,8 +122,13 @@ public class Patient {
         this.notes = notes;
     }
 
-    public int getBed() {
-        return bed;
+    public Bed getBed() {
+        for(Bed bed : DataProvider.bedList) {
+            if(bed.id.equals(String.valueOf(this.bed))){
+                return bed;
+            }
+        }
+        return null;
     }
 
     public void setBed(int bed) {
@@ -122,5 +136,21 @@ public class Patient {
     }
     public void save(Callback cb) {
         new NetworkingService().savePatient(this, cb);
+    }
+
+    public String getMedication() {
+        return medication;
+    }
+
+    public void setMedication(String medication) {
+        this.medication = medication;
+    }
+
+    public String getVaccinations() {
+        return vaccinations;
+    }
+
+    public void setVaccinations(String vaccinations) {
+        this.vaccinations = vaccinations;
     }
 }

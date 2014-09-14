@@ -1,5 +1,6 @@
 package com.medmanagerui.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,11 +8,13 @@ import java.util.List;
  */
 public class DataProvider {
 
-    public static List<Patient> patientList;
+    public static List<Patient> patientList = new ArrayList<Patient>();
 
     public static List<Ward> wardList;
 
     public static List<Bed> bedList;
+
+    public static List<Staff> staffList;
 
 
 }

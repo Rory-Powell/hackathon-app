@@ -65,9 +65,8 @@ public class BedViewFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_bed_view, container, false);
 
-
-
         GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
+
         gridview.setAdapter(new GridViewAdapter(ctx));
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -93,7 +92,7 @@ public class BedViewFragment extends Fragment {
                     }
                 }
          //*populate spinner
-                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ctx,R.layout.checkin_spinner,spinnerArray); //selected item will look like a spinner set from XML
+                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ctx,android.R.layout.simple_spinner_dropdown_item,spinnerArray); //selected item will look like a spinner set from XML
                 spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 patientSpinner.setAdapter(spinnerArrayAdapter);
 
@@ -108,6 +107,7 @@ public class BedViewFragment extends Fragment {
                 patient.setBed(position);
               //  patient.setDoctorId(doctorSpinner.getSelectedItem().toString());
                 alertDialogBuilder.setCancelable(false)
+                        .setTitle("Patient Check-In")
                         .setPositiveButton("OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,int id) {
@@ -123,28 +123,11 @@ public class BedViewFragment extends Fragment {
                                     }
                                 });
 
-                //AlertDialog alertDialog = new AlertDialog.Builder(ctx).create(); //Read Update
-                //alertDialog.setTitle("Allergies");
-                //alertDialog.setMessage("Allergies Edit Window");
 
-
-                //alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE,"Okay", new DialogInterface.OnClickListener() {
-                //public void onClick(DialogInterface dialog, int which) {
-                // here you can add functions
-                // }
-                //});
 
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();  //<-- See This!
 
-         //       DialogFragment newFragment = new PatientCheckInDialogFragment();
-           //     newFragment.show(getFragmentManager() ,"");
-       //        AlertDialog alertDialog = new AlertDialog.Builder(ctx).create(); //Read Update
-         //       alertDialog.setTitle("Patient Check-In");
-           //     alertDialog.setMessage("Select Doctor and Patient");
-
-           //     alertDialog.show();
-          //      builder.create();
 
             }
         });

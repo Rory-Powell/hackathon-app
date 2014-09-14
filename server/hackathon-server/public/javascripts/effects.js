@@ -5,6 +5,7 @@ $(document).ready(function(){
     $('#app-row').fadeIn(2000);
     $('#details-row').fadeIn(2000);
     $('.navbar-default').fadeIn(2000);
+    $(".table").hide();
 
 });
 
@@ -60,6 +61,8 @@ $(document).ready(function() {
 
 $(document).ready(function(){
     $(".bed li").hide();
+    $('.gallery').show();
+
     $(".wards").click(function(){
         $(".wards li").each(function() {
             $(this).fadeIn(1000);
@@ -73,3 +76,22 @@ $(document).ready(function(){
 });
 
 
+<<<<<<< HEAD
+=======
+$(document).ready(function() {
+    $(".clickable").click(function () {
+        $('.gallery').fadeOut(1000);
+        $('.table').fadeIn(1000);
+    });
+});
+
+$(document).ready(function(){
+    $(".wards li").hide();
+    $(".wards").click(function(){
+        $('.table').fadeOut(1000);
+        $('.gallery').fadeIn(1000);
+    });
+});
+
+
+>>>>>>> d0f205023c42b1dc7ec87e0ba8d1d650f0cdea8c

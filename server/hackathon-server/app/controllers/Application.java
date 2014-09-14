@@ -58,6 +58,7 @@ public class Application extends Controller {
             /** TODO redirect to appropriate doctor or nurse screen **/
             return redirect(
                     controllers.routes.Application.patientlist()
+
             );
         } else {
             flash("error", "Login details are not correct.");
@@ -69,7 +70,6 @@ public class Application extends Controller {
         List<Ward> wards = Ward.find.all();
 
         return ok(nursepatientdetails.render(wards, beds));
-
     }
 
     public static Result patient() {

@@ -1,16 +1,20 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import jdk.nashorn.internal.ir.ObjectNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.Bed;
 import models.Patient;
 import models.Staff;
 import models.Ward;
+import play.data.DynamicForm;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.index;
 
 import java.util.Calendar;
+import java.util.Map;
 
 /**
  * Hnales all requests to/from the mobile client.
@@ -28,6 +32,43 @@ public class Mobile extends Controller {
 
     public static Result fetchAllWards() {
         return ok(Json.toJson(Ward.find.all()));
+    }
+
+    public static Result fetchAllStaff() {
+        return ok(Json.toJson(Staff.find.all()));
+    }
+
+    public static Result login() {
+
+        /** Bind the request data to a form. **/
+        DynamicForm requestData = Form.form().bindFromRequest();
+
+        if (null == requestData) {
+            flash("error", "Please provide login details");
+            return ok(index.render());
+        }
+
+        final String userID = requestData.get("id");
+        final String password = requestData.get("password");
+
+        if (null == userID || null == password) {
+            ObjectNode jsonResponse = Json.newObject();
+            jsonResponse.put("success", false);
+            return ok(jsonResponse);
+        }
+
+        Staff staff = Staff.find.where().eq("id", userID).eq("password", password).findUnique();
+
+        if (staff != null) {
+
+            ObjectNode jsonResponse = Json.newObject();
+            jsonResponse.put("success", true);
+            return ok(jsonResponse);
+        } else {
+            ObjectNode jsonResponse = Json.newObject();
+            jsonResponse.put("success", false);
+            return ok(jsonResponse);
+        }
     }
 
     public static Result savePatient() {
