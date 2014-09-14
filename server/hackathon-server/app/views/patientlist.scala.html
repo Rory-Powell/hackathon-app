@@ -1,4 +1,11 @@
-@(wards:java.util.List[models.Ward])(beds:java.util.List[models.Bed])
+@(wards:java.util.List[models.Ward])(beds:java.util.List[models.Bed])(patients:java.util.List[models.Patient])
+    @formatDate(date: Calendar) = @{
+        import java.text.SimpleDateFormat
+
+        val curTimeFormat = new SimpleDateFormat("MM/dd/yyy")
+
+        curTimeFormat.format(date.getTime)
+    }
 @main("MedManager Nurse Patient Details Interface") {
     <header class="navbar-default" style="display:none;">
         <nav role="navigation">
@@ -36,11 +43,7 @@
                                                 <ul class="beds">
                                                 @for(bed <- beds) {
                                                     @if(bed.ward.id == ward.id){
-<<<<<<< HEAD
-                                                        <li class="bed" onclick="loadBed(@bed.ward.id)">Bed @bed.id
-=======
                                                         <li class="bed">Bed @bed.id
->>>>>>> 53c3b6b13bcdea2f467528f13cf8988424761d13
                                                         </li>
                                                     }
                                                 }
@@ -55,35 +58,35 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="main-view">
-
-
-                                        <div class="heading"><h4>  Details</h4> </div>
-                                        <div class="table">
-                                        <table class="detail" style="display:none;">
-                                            <tr>sdsd</tr>
-                                        </table>
-                                            </div>
-                                        <div class="gallery" style="display:none;">@for(ward <- wards) {
-                                            <ul class="gallery">
-                                            @for(bed <- beds) {
-                                                @if(bed.ward.id == ward.id){
-                                                    <li class="gallery">
-                                                        <p> @bed.id </p>
-                                                        <img class="clickable"src="@routes.Assets.at("images/bed1.png")" style="width:112;height:=112">
-
-
-
-
-                                                    </li>
-                                                }
+                                        <div class="heading"><h4> Details</h4> </div>
+                                        <div class="table table-bordered">
+                                        <table class="table tabled-bordered">
+                                            <thead>
+                                                <tr>
+                                                <th>Name</th>
+                                                <th>D.O.B</th>
+                                                <th>Address</th>
+                                                <th>GP</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            @for(patient <- patients) {
+                                                <tr>
+                                                <td>@patient.name</td>
+                                                <td>@formatDate(patient.dob)</td>
+                                                <td>@patient.address</td>
+                                                <td>@patient.gp</td>
+                                                </tr>
+                                            </tbody>
                                             }
 
-                                            </ul>
+                                        </div>
+                                        </div>
 
-                                        }</div>
+
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+
 
 
 

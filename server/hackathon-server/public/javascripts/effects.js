@@ -50,6 +50,15 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $(".ward").click(function () {
+        $('#table-bordered').append('<tr><td>my data</td><td>more data</td></tr>');
+
+    });
+});
+
+
+
 $(document).ready(function(){
     $(".bed li").hide();
     $('.gallery').show();
@@ -67,6 +76,8 @@ $(document).ready(function(){
 });
 
 
+<<<<<<< HEAD
+=======
 $(document).ready(function() {
     $(".clickable").click(function () {
         $('.gallery').fadeOut(1000);
@@ -93,3 +104,4 @@ function loadBed(id) {
     });
 }
 
+>>>>>>> d0f205023c42b1dc7ec87e0ba8d1d650f0cdea8c

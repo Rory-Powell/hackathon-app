@@ -2,6 +2,7 @@ package controllers;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.Bed;
+import models.Patient;
 import models.Staff;
 import models.Ward;
 import play.*;
@@ -23,10 +24,12 @@ public class Application extends Controller {
 
     }
 
-    public static Result nurse() {
+    public static Result patientlist() {
         List<Ward> wards = Ward.find.all();
         List<Bed> beds = Bed.find.all();
-        return ok(nurse.render(wards, beds));
+        List<Patient> patients = Patient.find.all();
+        return ok(patientlist.render(wards, beds, patients));
+
     }
 
     public static Result login() {
@@ -54,7 +57,8 @@ public class Application extends Controller {
             Controller.session("email", userID);
             /** TODO redirect to appropriate doctor or nurse screen **/
             return redirect(
-                    controllers.routes.Application.nursepatientdetails()
+                    controllers.routes.Application.patientlist()
+
             );
         } else {
             flash("error", "Login details are not correct.");
