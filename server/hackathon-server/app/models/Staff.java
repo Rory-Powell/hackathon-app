@@ -11,6 +11,8 @@ import javax.persistence.Id;
 @Entity
 public class Staff extends Model {
 
+
+
     @Id
     public String id;
 
